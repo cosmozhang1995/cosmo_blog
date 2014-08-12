@@ -111,6 +111,7 @@
 	line-height: 20px;
 	vertical-align: middle;*/
 	font-size: 16px;
+	/*margin-top: -5px;*/
 }
 </style>
 
