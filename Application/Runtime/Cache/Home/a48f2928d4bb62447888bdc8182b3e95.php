@@ -219,6 +219,38 @@ less = {
 	font-size: 16px;
 	/*margin-top: -5px;*/
 }
+
+.resume-row-skills {
+	height: 400px;
+	position: relative;
+	width: 50%;
+	left: 50%;
+	top: 200px;
+}
+.resume-row-skills .skill-container {
+	display: inline-block;
+	padding: 10px;
+	border-radius: 50%;
+	position: absolute;
+}
+.resume-row-skills .skill-container:hover {
+	background-color: rgba(200,200,200,0.5);
+}
+.resume-row-skills .skill {
+	display: inline-block;
+	border-radius: 50%;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 0 0 10px -4px #000;
+}
+.resume-row-skills .skill-text {
+	color: white;
+	text-align: center;
+	display: inline-block;
+	width: auto;
+	height: auto;
+}
 </style>
 
 <div class="resume-container">
@@ -299,7 +331,161 @@ less = {
 			</div>
 		</div>
 	</div>
+	<div id="resume-row-skills" class="resume-row resume-row-skills">
+	</div>
+	<div id="" class="resume-row" style="height:200px;">
+	</div>
 </div>
+
+<script type="text/javascript">
+var mySkills = [
+	{
+		'name': 'js',
+		'displayName': 'JavaScript',
+		css: {
+			'backgroundColor': '#1FFF00',
+			'x': -70,
+			'y': 0,
+			'size': 100,
+			'fontSize': 16
+		}
+	},
+	{
+		'name': 'css',
+		'displayName': 'CSS',
+		css: {
+			'backgroundColor': '#E8B50C',
+			'x': 70,
+			'y': 0,
+			'size': 100,
+			'fontSize': 22
+		}
+	},
+	{
+		'name': 'python',
+		'displayName': 'Python',
+		css: {
+			'backgroundColor': '#7C0CE8',
+			'x': -180,
+			'y': 40,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'php',
+		'displayName': 'PHP',
+		css: {
+			'backgroundColor': '#0DC8FF',
+			'x': -180,
+			'y': -40,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'objc',
+		'displayName': 'Obj C',
+		css: {
+			'backgroundColor': '#FFF602',
+			'x': -250,
+			'y': -80,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'cpp',
+		'displayName': 'C/C++',
+		css: {
+			'backgroundColor': '#E8670A',
+			'x': -250,
+			'y': 0,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'java',
+		'displayName': 'Java',
+		css: {
+			'backgroundColor': '#FF02FF',
+			'x': -250,
+			'y': 80,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'ajax',
+		'displayName': 'AJAX',
+		css: {
+			'backgroundColor': '#0A52E8',
+			'x': 0,
+			'y': -80,
+			'size': 80,
+			'fontSize': 14
+		}
+	},
+	{
+		'name': 'mysql',
+		'displayName': 'MySQL',
+		css: {
+			'backgroundColor': '#0BFF60',
+			'x': -320,
+			'y': -40,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'linux',
+		'displayName': 'RHEL',
+		css: {
+			'backgroundColor': '#E8B50C',
+			'x': -320,
+			'y': 40,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+]
+function personalSkills (skills) {
+	var skills = skills;
+
+	function addSkill(skill) {
+		var innerDiv = document.createElement('div');
+		innerDiv.className = "skill-text";
+		innerDiv.innerHTML = skill.displayName;
+		innerDiv.style.fontSize = skill.css.fontSize + 'px';
+		var div = document.createElement('div');
+		div.className = "skill";
+		div.style.width = skill.css.size + 'px';
+		div.style.height = skill.css.size + 'px';
+		div.style.lineHeight = skill.css.size + 'px';
+		div.style.backgroundColor = skill.css.backgroundColor;
+		console.log(div.style);
+		var outerDiv = document.createElement('div');
+		outerDiv.className = "skill-container";
+		outerDiv.style.top = skill.css.y - (skill.css.size/2) + 'px';
+		outerDiv.style.left = skill.css.x - (skill.css.size/2) + 'px';
+		document.getElementById('resume-row-skills').appendChild(outerDiv);
+		outerDiv.appendChild(div);
+		div.appendChild(innerDiv);
+		thediv = outerDiv;
+	}
+	function initialSkills() {
+		document.getElementById('resume-row-skills').removeAllChildNodes();
+		for (var i = 0; i < skills.length; i++) {
+			addSkill(skills[i]);
+		}
+	}
+	initialSkills();
+}
+$(document).ready(function() {
+	personalSkills(mySkills);
+});
+</script>
 		</div>
 	</body>
 	

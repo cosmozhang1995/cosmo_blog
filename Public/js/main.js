@@ -107,6 +107,13 @@ Array.prototype.indexOf = function(ele) {
 	return -1;
 }
 
+Element.prototype.removeAllChildNodes = function() {
+	var childs = this.childNodes;
+	for (var i = childs.length - 1; i >= 0; i--) {
+		this.removeChild(childs[i]);
+	}
+}
+
 $(document).ready(function(e) {
 	// Left fan-nav widget
 	var userAgent = navigator.userAgent;
