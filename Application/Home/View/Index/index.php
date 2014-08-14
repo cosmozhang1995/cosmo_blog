@@ -72,7 +72,10 @@
 	</div>
 </div>
 <include file='Public/lib_req/js.php' />
+<if condition="$inframe eq true">
+<else/>
 <script type="text/javascript" src="__ROOT____JS__/main.js"></script>
+</if>
 <script type="text/javascript" src="__ROOT____JS__/index.js"></script>
 <if condition="$inframe eq true">
 <script type="text/javascript" src="__ROOT____JS__/index-inframe.js"></script>

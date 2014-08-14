@@ -94,7 +94,8 @@ less = {
 };
 </script>
 <script type="text/javascript" src="http://libs.baidu.com/lesscss/1.3.0/less.min.js"></script>
-<script type="text/javascript" src="/cosmo_blog/Public/js/main.js"></script>
+<?php if($inframe == true): else: ?>
+<script type="text/javascript" src="/cosmo_blog/Public/js/main.js"></script><?php endif; ?>
 <script type="text/javascript" src="/cosmo_blog/Public/js/index.js"></script>
 <?php if($inframe == true): ?><script type="text/javascript" src="/cosmo_blog/Public/js/index-inframe.js"></script><?php endif; ?>
 </body>

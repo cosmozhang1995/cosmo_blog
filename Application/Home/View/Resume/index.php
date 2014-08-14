@@ -322,6 +322,17 @@ var mySkills = [
 		}
 	},
 	{
+		'name': 'jquery',
+		'displayName': 'jQuery',
+		css: {
+			'backgroundColor': '#0BFF60',
+			'x': 0,
+			'y': 80,
+			'size': 80,
+			'fontSize': 14
+		}
+	},
+	{
 		'name': 'mysql',
 		'displayName': 'MySQL',
 		css: {
@@ -345,26 +356,173 @@ var mySkills = [
 	},
 	{
 		'name': 'thinkphp',
-		'displayName': 'MySQL',
+		'displayName': 'ThinkPHP',
 		css: {
 			'backgroundColor': '#0BFF60',
-			'x': -320,
+			// 'x': -180,
+			// 'y': -120,
+			'x': 320,
 			'y': -40,
 			'size': 50,
-			'fontSize': 12
+			'fontSize': 10
 		}
 	},
 	{
 		'name': 'ssh',
-		'displayName': 'RHEL',
+		'displayName': 'SSH',
 		css: {
 			'backgroundColor': '#E8B50C',
-			'x': -320,
+			// 'x': -180,
+			// 'y': 120,
+			'x': 320,
 			'y': 40,
 			'size': 50,
 			'fontSize': 12
 		}
 	},
+	{
+		'name': 'ember',
+		'displayName': 'Ember',
+		css: {
+			'backgroundColor': '#E8670A',
+			'x': -100,
+			'y': -90,
+			'size': 60,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'restful',
+		'displayName': 'RESTful',
+		css: {
+			'backgroundColor': '#0DC8FF',
+			'x': -100,
+			'y': 90,
+			'size': 60,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'bootstrap',
+		'displayName': 'Bootstrap',
+		css: {
+			'backgroundColor': '#7C0CE8',
+			'x': 100,
+			'y': -90,
+			'size': 60,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'sprites',
+		'displayName': 'Sprite',
+		css: {
+			'backgroundColor': '#FFF602',
+			'x': 100,
+			'y': 90,
+			'size': 60,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'ps',
+		'displayName': 'Photoshop',
+		css: {
+			'backgroundColor': '#0BFF60',
+			'x': 180,
+			'y': 40,
+			'size': 50,
+			'fontSize': 9
+		}
+	},
+	{
+		'name': 'ae',
+		'displayName': 'AfterEffects',
+		css: {
+			'backgroundColor': '#E8670A',
+			'x': 180,
+			'y': -40,
+			'size': 50,
+			'fontSize': 8
+		}
+	},
+	{
+		'name': 'fl',
+		'displayName': 'Flash',
+		css: {
+			'backgroundColor': '#FFF602',
+			'x': 250,
+			'y': -80,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'mvc',
+		'displayName': 'MVC',
+		css: {
+			'backgroundColor': '#0DC8FF',
+			'x': 250,
+			'y': 0,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	{
+		'name': 'pr',
+		'displayName': 'Premiere',
+		css: {
+			'backgroundColor': '#FF02FF',
+			'x': 250,
+			'y': 80,
+			'size': 50,
+			'fontSize': 12
+		}
+	},
+	// {
+	// 	'name': 'mysql',
+	// 	'displayName': 'MySQL',
+	// 	css: {
+	// 		'backgroundColor': '#0BFF60',
+	// 		'x': 320,
+	// 		'y': -40,
+	// 		'size': 50,
+	// 		'fontSize': 12
+	// 	}
+	// },
+	// {
+	// 	'name': 'linux',
+	// 	'displayName': 'RHEL',
+	// 	css: {
+	// 		'backgroundColor': '#E8B50C',
+	// 		'x': 320,
+	// 		'y': 40,
+	// 		'size': 50,
+	// 		'fontSize': 12
+	// 	}
+	// },
+	// {
+	// 	'name': 'fl',
+	// 	'displayName': 'Flash',
+	// 	css: {
+	// 		'backgroundColor': '#0BFF60',
+	// 		'x': 180,
+	// 		'y': -120,
+	// 		'size': 50,
+	// 		'fontSize': 12
+	// 	}
+	// },
+	// {
+	// 	'name': 'pr',
+	// 	'displayName': 'Premiere',
+	// 	css: {
+	// 		'backgroundColor': '#E8B50C',
+	// 		'x': 180,
+	// 		'y': 120,
+	// 		'size': 50,
+	// 		'fontSize': 10
+	// 	}
+	// },
 ]
 function personalSkills (skills) {
 	var skills = skills;

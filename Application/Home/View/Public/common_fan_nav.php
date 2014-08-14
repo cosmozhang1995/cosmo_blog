@@ -1,3 +1,6 @@
+<if condition="$closeFanNav">
+<script type="text/javascript">App.closeFanNav = true;</script>
+<else/>
 <div class="left-fan-container" id="left-fan-container">
 	<div class="left-roll" id="left-roll"></div>
 	<iframe class="left-fan" id="left-fan" src="{:U('/index_inframe')}"></iframe>
@@ -15,3 +18,4 @@
 	</div>
 	<div class="left-fan-toggle-indicator-left-triangle left-fan-toggle-indicator-left-triangle-body"></div>
 </div>
+</if>
