@@ -86,7 +86,9 @@ less = {
 		</li>
 	</div>
 </div>
-		<div class="left-fan-container" id="left-fan-container">
+		<?php if($closeFanNav): ?><script type="text/javascript">App.closeFanNav = true;</script>
+<?php else: ?>
+<div class="left-fan-container" id="left-fan-container">
 	<div class="left-roll" id="left-roll"></div>
 	<iframe class="left-fan" id="left-fan" src="<?php echo U('/index_inframe');?>"></iframe>
 </div>
@@ -102,7 +104,7 @@ less = {
 		浏览器太卡？点击箭头隐藏挂件以节省资源哦~<a href="javascript:setNoFanNavToggleIndicator();">我知道了</a>
 	</div>
 	<div class="left-fan-toggle-indicator-left-triangle left-fan-toggle-indicator-left-triangle-body"></div>
-</div>
+</div><?php endif; ?>
 		<div class="main-container">
 			<link rel="stylesheet" type="text/css" href="/cosmo_blog//Public/css/page-flag.css">
 <style type="text/css">

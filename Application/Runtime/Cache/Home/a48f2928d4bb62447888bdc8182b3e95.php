@@ -223,11 +223,12 @@ less = {
 }
 
 .resume-row-skills {
-	height: 400px;
+	height: 280px;
 	position: relative;
 	width: 50%;
 	left: 50%;
-	top: 200px;
+	top: 140px;
+	/*z-index: 10;*/
 }
 .resume-row-skills .skill-container {
 	display: inline-block;
@@ -237,6 +238,12 @@ less = {
 }
 .resume-row-skills .skill-container:hover {
 	background-color: rgba(200,200,200,0.5);
+	transform: scale(1.5);
+	-webkit-transform: scale(1.5);
+	-ms-transform: scale(1.5);
+	-o-transform: scale(1.5);
+	-moz-transform: scale(1.5);
+	z-index: 1;
 }
 .resume-row-skills .skill {
 	display: inline-block;
@@ -253,6 +260,198 @@ less = {
 	width: auto;
 	height: auto;
 }
+
+.resume-row-time-line {
+	position: relative;
+	margin-top: 20px;
+}
+.resume-row-time-line .time-line {
+	position: absolute;
+	height: 100%;
+	width: 10px;
+	top: 0px;
+	left: 50%;
+	margin-left: -5px;
+	z-index: -10;
+	background-color: rgb(153,204,51);
+}
+.resume-row-time-line .time-line > div {
+	height: 100%;
+	width: 100%;
+	background: rgb(225,225,225); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(225,225,225,1) 0%, rgba(225,225,225,1) 50%, rgba(225,225,225,0) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(225,225,225,1)), color-stop(50%,rgba(225,225,225,1)), color-stop(100%,rgba(225,225,225,0))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(225,225,225,1) 0%,rgba(225,225,225,1) 50%,rgba(225,225,225,0) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(225,225,225,1) 0%,rgba(225,225,225,1) 50%,rgba(225,225,225,0) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(225,225,225,1) 0%,rgba(225,225,225,1) 50%,rgba(225,225,225,0) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(225,225,225,1) 0%,rgba(225,225,225,1) 50%,rgba(225,225,225,0) 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1e1e1', endColorstr='#e19696',GradientType=0 ); /* IE6-9 */
+}
+.resume-row-time-line .item {
+	min-height: 50px;
+}
+.resume-row-time-line .item-title {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.resume-row-time-line .item-title .title {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	/*width: 150px;*/
+	padding: 5px;
+	background-color: rgb(150,150,150);
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	border-radius: 5px;
+	/*padding-top: 0px;*/
+}
+.resume-row-time-line .item-title .title span {
+	display: inline-block;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+}
+.resume-row-time-line .item-foot {
+	text-align: center;
+	margin-bottom: 20px;
+}
+.resume-row-time-line .item-foot .foot {
+	display: inline-block;
+	height: 22px;
+	line-height: 22px;
+	/*width: 150px;*/
+	padding: 5px;
+	background-color: rgb(150,150,150);
+	color: white;
+	font-family: Verdana, Geneva, sans-serif;
+	border-radius: 5px;
+	/*padding-top: 0px;*/
+}
+.resume-row-time-line .item-foot .foot span {
+	display: inline-block;
+	height: 12px;
+	line-height: 12px;
+	font-size: 12px;
+}
+.resume-row-time-line .item {
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;
+}
+.resume-row-time-line .item .column-middle {
+	width: 20px;
+	-webkit-box-flex: 0;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 0;         /* OLD - Firefox 19- */
+	-webkit-flex: 0;          /* Chrome */
+	-ms-flex: 0;              /* IE 10 */
+	flex: 0;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.resume-row-time-line .item .column-left,.column-right {
+	-webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+	-moz-box-flex: 1;         /* OLD - Firefox 19- */
+	-webkit-flex: 1;          /* Chrome */
+	-ms-flex: 1;              /* IE 10 */
+	flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.resume-row-time-line .item .column {
+	padding: 10px;
+}
+.resume-row-time-line .item .column-left {
+	text-align: right;
+}
+.resume-row-time-line .item .column-right {
+	text-align: left;
+}
+.resume-row-time-line .item .column .quot-container {
+	display: block;
+	position: relative;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.resume-row-time-line .item .column .quot-container .quot-block {
+	display: inline-block;
+	min-height: 40px;
+	border-radius: 5px;
+	text-align: left;
+	padding: 10px;
+	min-width: 40%;
+	max-width: 80%;
+	cursor: pointer;
+	/*padding-top: 20px;*/
+}
+.resume-row-time-line .item .column .quot-container .quot-arrow {
+	display: inline-block;
+	width: 0px;
+	height: 0px;
+	border-width: 10px;
+	border-style: solid;
+	position: absolute;
+	top: 10px;
+}
+.resume-row-time-line .item .column-left .quot-container .quot-arrow {
+	/*border-style: none none solid none;*/
+	right: -10px;
+}
+.resume-row-time-line .item .column-right .quot-container .quot-arrow {
+	/*border-style: solid none none none;*/
+	left: -10px;
+}
+.resume-row-time-line .item .column .quot-container .quot-block .title {
+	/*display: inline-block;*/
+	font-size: 16px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #ffffff;
+}
+.resume-row-time-line .item .column .quot-container .quot-block .desc {
+	/*display: inline-block;*/
+	margin-top: 10px;
+	font-size: 13px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #eeeeee;
+}
+.resume-row-time-line .item .column .info-container {
+	display: inline-block;
+	position: relative;
+}
+.resume-row-time-line .item .column-left .info-container {
+	text-align: right;
+}
+.resume-row-time-line .item .column-right .info-container {
+	text-align: left;
+	padding-top: 0px;
+}
+.resume-row-time-line .item .column .info-container .info-tag {
+	display: block;
+	font-size: 16px;
+	font-family: Verdana, Geneva, sans-serif;
+}
+.resume-row-time-line .item .column .info-container .info-time {
+	display: block;
+	font-size: 13px;
+	font-family: Verdana, Geneva, sans-serif;
+	color: #999999;
+}
+.resume-row-time-line .item .column-middle .circle {
+	background-color: #FFFFFC;
+	margin-top: 10px;
+	margin-left: -10px;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	border-width: 3px;
+	border-color: rgb(225,225,225);
+	border-style: solid;
+}
+
+/*#resume-row-time-line-education .quot-block {
+	background-color: rgb(153,204,51);
+}
+#resume-row-time-line-education .quot-arrow {
+	border-color: rgb(153,204,51);
+}*/
 </style>
 
 <div class="resume-container">
@@ -335,7 +534,22 @@ less = {
 	</div>
 	<div id="resume-row-skills" class="resume-row resume-row-skills">
 	</div>
-	<div id="" class="resume-row" style="height:200px;">
+	<div id="resume-row-time-line-container">
+	<!-- <div id="resume-row-time-line-education" class="resume-row resume-row-time-line">
+		<div class="time-line"><div></div></div>
+		<div class="item-title">
+			<div class="title">
+				<span><i class="fa fa-graduation-cap"></i></span>
+				<span>教育经历&nbsp;EDUCATION</span>
+			</div>
+		</div>
+		<div class="item-content"></div>
+		<div class="item-foot">
+			<div class="foot">
+				<span>TODAY</span>
+			</div>
+		</div>
+	</div> -->
 	</div>
 </div>
 
@@ -433,7 +647,7 @@ var mySkills = [
 		'name': 'jquery',
 		'displayName': 'jQuery',
 		css: {
-			'backgroundColor': '#0BFF60',
+			'backgroundColor': '#FF02FF',
 			'x': 0,
 			'y': 80,
 			'size': 80,
@@ -503,7 +717,7 @@ var mySkills = [
 		'name': 'restful',
 		'displayName': 'RESTful',
 		css: {
-			'backgroundColor': '#0DC8FF',
+			'backgroundColor': '#E8B50C',
 			'x': -100,
 			'y': 90,
 			'size': 60,
@@ -522,10 +736,10 @@ var mySkills = [
 		}
 	},
 	{
-		'name': 'sprites',
-		'displayName': 'Sprite',
+		'name': 'nodejs',
+		'displayName': 'Node.js',
 		css: {
-			'backgroundColor': '#FFF602',
+			'backgroundColor': '#0DC8FF',
 			'x': 100,
 			'y': 90,
 			'size': 60,
@@ -558,7 +772,7 @@ var mySkills = [
 		'name': 'fl',
 		'displayName': 'Flash',
 		css: {
-			'backgroundColor': '#FFF602',
+			'backgroundColor': '#0DC8FF',
 			'x': 250,
 			'y': -80,
 			'size': 50,
@@ -566,10 +780,10 @@ var mySkills = [
 		}
 	},
 	{
-		'name': 'mvc',
-		'displayName': 'MVC',
+		'name': 'sprites',
+		'displayName': 'Sprite',
 		css: {
-			'backgroundColor': '#0DC8FF',
+			'backgroundColor': '#FFF602',
 			'x': 250,
 			'y': 0,
 			'size': 50,
@@ -646,11 +860,10 @@ function personalSkills (skills) {
 		div.style.height = skill.css.size + 'px';
 		div.style.lineHeight = skill.css.size + 'px';
 		div.style.backgroundColor = skill.css.backgroundColor;
-		console.log(div.style);
 		var outerDiv = document.createElement('div');
 		outerDiv.className = "skill-container";
 		outerDiv.style.top = skill.css.y - (skill.css.size/2) + 'px';
-		outerDiv.style.left = skill.css.x - (skill.css.size/2) + 'px';
+		outerDiv.style.left = skill.css.x - (skill.css.size/2) - 10 + 'px';
 		document.getElementById('resume-row-skills').appendChild(outerDiv);
 		outerDiv.appendChild(div);
 		div.appendChild(innerDiv);
@@ -666,6 +879,223 @@ function personalSkills (skills) {
 }
 $(document).ready(function() {
 	personalSkills(mySkills);
+});
+</script>
+<script type="text/javascript">
+var myCourse = {
+	configs: {
+		'education': {
+			'color': 'rgb(153,204,51)',
+			'tagColor': 'rgb(255,102,102)',
+			'icon': 'graduation-cap',
+			'title': '教育经历&nbsp;EDUCATION',
+			'foot': 'TODAY'
+		},
+		'career': {
+			'color': 'rgb(51,102,153)',
+			'tagColor': 'rgb(153,204,51)',
+			'icon': 'graduation-cap',
+			'title': '教育经历&nbsp;EDUCATION',
+			'foot': 'TODAY'
+		},
+		'project': {
+			'color': 'rgb(255,102,102)',
+			'tagColor': 'rgb(51,102,153)',
+			'icon': 'graduation-cap',
+			'title': '教育经历&nbsp;EDUCATION',
+			'foot': 'TODAY'
+		}
+	},
+	education: [
+		{
+			'startYear': 2012,
+			'startMonth': 9,
+			'endYear': null,
+			'endMonth': null,
+			'tag': 'University',
+			'title': '北京邮电大学',
+			'desc': '通信工程专业试点班培养方案<br/>学生会网络部副部长'
+		}
+	],
+	career: [
+		{
+			'startYear': 2012,
+			'startMonth': 9,
+			'endYear': null,
+			'endMonth': null,
+			'tag': 'University',
+			'title': '北京邮电大学',
+			'desc': '通信工程专业试点班培养方案<br/>学生会网络部副部长'
+		}
+	],
+	project: [
+		{
+			'startYear': 2012,
+			'startMonth': 9,
+			'endYear': null,
+			'endMonth': null,
+			'tag': 'University',
+			'title': '北京邮电大学',
+			'desc': '通信工程专业试点班培养方案<br/>学生会网络部副部长'
+		}
+	]
+}
+function personalCourse(course) {
+
+	function mouseOver(e) {
+		if (checkHover(e,this)) {
+			var theItem = $(this).parents('.item')[0];
+			var theBackColor = $('body').css('background-color');
+			console.log(this.style.backgroundColor);
+			mythis = this;
+			$(theItem).find('.column-middle .circle').css('background-color', this.style.backgroundColor);
+			$(theItem).find('.column-middle .circle').css('border-color', theBackColor);
+			$(this).find('.desc').show(200);
+		}
+	}
+
+	function mouseOut(e) {
+		if (checkHover(e,this)) {
+			var theItem = $(this).parents('.item')[0];
+			var theBackColor = $('body').css('background-color');
+			$(theItem).find('.column-middle .circle').css('border-color', this.style.backgroundColor);
+			$(theItem).find('.column-middle .circle').css('background-color', theBackColor);
+			$(this).find('.desc').hide(200);
+		}
+	}
+
+	function addItem(courseType, courseItem, contentInLeft) {
+		var row = document.createElement('div');
+		row.className = "item";
+		var columnLeft = document.createElement('div');
+		columnLeft.className = "column column-left";
+		var columnMiddle = document.createElement('div');
+		columnMiddle.className = "column column-middle";
+		var columnRight = document.createElement('div');
+		columnRight.className = "column column-right";
+		var middleCircle = document.createElement('div');
+		middleCircle.className = "circle";
+		var infoBlock = document.createElement('div');
+		infoBlock.className = "info-container";
+		var quotBlock = document.createElement('div');
+		quotBlock.className = "quot-container";
+		var infoTag = document.createElement('div');
+		infoTag.className = "info-tag";
+		var infoTime = document.createElement('div');
+		infoTime.className = "info-time";
+		var quotBody = document.createElement('div');
+		quotBody.className = "quot-block";
+		var quotTitle = document.createElement('div');
+		quotTitle.className = "title";
+		var quotDesc = document.createElement('div');
+		quotDesc.className = "desc";
+		var quotArrow = document.createElement('div');
+		quotArrow.className = "quot-arrow";
+
+		quotTitle.innerHTML = courseItem.title;
+		quotDesc.innerHTML = courseItem.desc;
+		infoTag.innerHTML = courseItem.tag;
+		infoTime.innerHTML = courseItem.startYear;
+
+		quotDesc.style.display = 'none';
+		quotBody.onmouseover = mouseOver;
+		quotBody.onmouseout = mouseOut;
+
+		var config = course.configs[courseType];
+		infoTag.style.color = config.tagColor;
+		quotBody.style.backgroundColor = config.color;
+		if (contentInLeft) {
+			quotArrow.style.borderColor = 'transparent transparent transparent ' + config.color;
+		} else {
+			quotArrow.style.borderColor = 'transparent ' + config.color + ' transparent transparent';
+		}
+
+		$('#resume-row-time-line-' + courseType + ' .item-content')[0].appendChild(row);
+		row.appendChild(columnLeft);
+		row.appendChild(columnMiddle);
+		row.appendChild(columnRight);
+		columnMiddle.appendChild(middleCircle);
+		if (contentInLeft) {
+			columnLeft.appendChild(quotBlock);
+			columnRight.appendChild(infoBlock);
+		} else {
+			columnRight.appendChild(quotBlock);
+			columnLeft.appendChild(infoBlock);
+		}
+		quotBlock.appendChild(quotArrow);
+		quotBlock.appendChild(quotBody);
+		quotBody.appendChild(quotTitle);
+		quotBody.appendChild(quotDesc);
+		infoBlock.appendChild(infoTag);
+		infoBlock.appendChild(infoTime);
+	}
+
+	function addItems(courseType) {
+		addFrame(courseType);
+		var config = course.configs[courseType];
+		$('#resume-row-time-line-' + courseType + ' .time-line').css('background-color', config.color);
+		$('#resume-row-time-line-' + courseType + ' .item-content *').remove();
+		var theCourseItems = course[courseType];
+		var contentInLeft = Math.random() >= 0.5 ? false : true;
+		for (var i = 0; i < theCourseItems.length; i++) {
+			contentInLeft = !contentInLeft;
+			addItem(courseType, theCourseItems[i], contentInLeft);
+		}
+	}
+
+	function addFrame(courseType) {
+		if (document.getElementById('resume-row-time-line-' + courseType) == undefined) {
+			var config = course.configs[courseType];
+			var row = document.createElement('div');
+			row.className = 'resume-row resume-row-time-line';
+			row.id = 'resume-row-time-line-' + courseType;
+			var timeLine = document.createElement('div');
+			timeLine.className = 'time-line';
+			var itemTitle = document.createElement('div');
+			itemTitle.className = 'item-title';
+			var itemTitleTitle = document.createElement('div');
+			itemTitleTitle.className = 'title';
+			var itemIconSpan = document.createElement('span');
+			var itemTitleSpan = document.createElement('span');
+			var itemIconIcon = document.createElement('i');
+			itemIconIcon.className = 'fa fa-' + config.icon;
+			var itemContent = document.createElement('div');
+			itemContent.className = 'item-content';
+			var itemFoot = document.createElement('div');
+			itemFoot.className = 'item-foot';
+			var itemFootFoot = document.createElement('div');
+			itemFootFoot.className = 'foot';
+			var itemFootSpan = document.createElement('span');
+			itemTitleSpan.innerHTML = config.title;
+			itemFootSpan.innerHTML = config.foot;
+			document.getElementById('resume-row-time-line-container').appendChild(row);
+			row.appendChild(timeLine);
+			timeLine.appendChild(document.createElement('div'));
+			row.appendChild(itemTitle);
+			itemTitle.appendChild(itemTitleTitle);
+			itemTitleTitle.appendChild(itemIconSpan);
+			itemIconSpan.appendChild(itemIconIcon);
+			itemTitleTitle.appendChild(itemTitleSpan);
+			row.appendChild(itemContent);
+			row.appendChild(itemFoot);
+			itemFoot.appendChild(itemFootFoot);
+			itemFootFoot.appendChild(itemFootSpan);
+		}
+	}
+
+	function addAllItems() {
+		// addItems('education');
+		for (var type in myCourse) {
+			if (type != 'configs') {
+				addItems(type);
+			}
+		}
+	}
+
+	addAllItems();
+}
+$(document).ready(function() {
+	personalCourse(myCourse);
 });
 </script>
 		</div>
