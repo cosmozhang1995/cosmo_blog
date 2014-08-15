@@ -16,7 +16,7 @@ return array(
 		'__CSS__'				=>	'/Public/css',
 		'__DIST__'			=>	'/Public/dist',
 		'__LIB_REQ__'		=>	'/Public/lib_req',
-		'__IMG_RES__'		=>	'http://cosmozhang-cosmozhang.stor.sinaapp.com/img',
+		'__IMG_RES__'		=>	__ROOT__.'/Public/img',
 	),
 	'URL_HTML_SUFFIX'=>'',
 
