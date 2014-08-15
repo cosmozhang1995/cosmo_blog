@@ -4,7 +4,8 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title><?php echo ((isset($page_info['title']) && ($page_info['title'] !== ""))?($page_info['title']):首页); ?> - 花栗鼠与美女猫</title>
 	<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-
+<!-- <link href="http://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet/less" type="text/css" href="/cosmo_blog/Public/css/style.css">
 	<script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
@@ -78,21 +79,23 @@ less = {
 			</a>
 		</li>
 		<li class="top-nav-item">
-			<a class="button" href="#">
+			<a class="button" href="<?php echo U('/resume/');?>">
 				<span class="top-nav-content-chinese">关于</span>
 				<span class="top-nav-content-english">About</span>
 			</a>
 		</li>
 	</div>
 </div>
-		<div class="left-fan-container" id="left-fan-container">
+		<?php if($closeFanNav): ?><script type="text/javascript">App.closeFanNav = true;</script>
+<?php else: ?>
+<div class="left-fan-container" id="left-fan-container">
 	<div class="left-roll" id="left-roll"></div>
 	<iframe class="left-fan" id="left-fan" src="<?php echo U('/index_inframe');?>"></iframe>
 </div>
 <div class="left-fan-toggle-container">
 	<div class="left-fan-toggle-content">
-		<span class="glyphicon glyphicon-chevron-up"></span>
-		<span class="glyphicon glyphicon-chevron-up"></span>
+		<span class="fa fa-chevron-up"></span>
+		<span class="fa fa-chevron-up"></span>
 	</div>
 </div>
 <div class="left-fan-toggle-indicator" id="left-fan-toggle-indicator">
@@ -101,7 +104,7 @@ less = {
 		浏览器太卡？点击箭头隐藏挂件以节省资源哦~<a href="javascript:setNoFanNavToggleIndicator();">我知道了</a>
 	</div>
 	<div class="left-fan-toggle-indicator-left-triangle left-fan-toggle-indicator-left-triangle-body"></div>
-</div>
+</div><?php endif; ?>
 		<div class="main-container">
 			<style type="text/css">
 

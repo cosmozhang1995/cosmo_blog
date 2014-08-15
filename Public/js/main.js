@@ -114,6 +114,24 @@ Element.prototype.removeAllChildNodes = function() {
 	}
 }
 
+Element.prototype.getPosition = function() {
+	function getpos(e) {  
+		var t=e.offsetTop;  
+		var l=e.offsetLeft;  
+		var height=e.offsetHeight; 
+		var parent = e; 
+		while(parent=parent.offsetParent) {  
+			t+=parent.offsetTop;
+			l+=parent.offsetLeft;
+		}
+		return {top:t,left:l};
+	}
+	var tlpos = getpos(this);
+	tlpos.right = tlpos.left + this.clientWidth;
+	tlpos.bottom = tlpos.top + this.clientHeight;
+	return tlpos;
+}
+
 $(document).ready(function(e) {
 	// Left fan-nav widget
 	var userAgent = navigator.userAgent;
