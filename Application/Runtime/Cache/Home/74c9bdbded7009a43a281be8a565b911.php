@@ -7,9 +7,9 @@
 <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" />
 <!-- <link href="http://libs.baidu.com/fontawesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"> -->
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-<link rel="stylesheet/less" type="text/css" href="/cosmo_blog/Public/css/style.css">
-<link rel="stylesheet/less" type="text/css" href="/cosmo_blog/Public/css/index.css">
-<?php if($inframe == true): ?><link rel="stylesheet/less" type="text/css" href="/cosmo_blog/Public/css/index-inframe.css"><?php endif; ?>
+<link rel="stylesheet/less" type="text/css" href="/Public/css/style.css">
+<link rel="stylesheet/less" type="text/css" href="/Public/css/index.css">
+<?php if($inframe == true): ?><link rel="stylesheet/less" type="text/css" href="/Public/css/index-inframe.css"><?php endif; ?>
 </head>
 
 <body>
@@ -45,8 +45,8 @@
     	<div class="center-circle-container">
     		<div class="center-circle" id="center-circle">
     	    	<div class="center-circle-content-fill">
-    	        	<img src="/cosmo_blog/Public/img/portrait.jpg" id="center-circle-content-portrait" class="center-circle-content" style="width:100%; height:100%;"/>
-    	            <img src="/cosmo_blog/Public/img/qrcode.png" id="center-circle-content-qrcode" class="center-circle-content" style="width:100%; height:100%;"/>
+    	        	<img src="/Public/img/portrait.jpg" id="center-circle-content-portrait" class="center-circle-content" style="width:100%; height:100%;"/>
+    	            <img src="/Public/img/qrcode.png" id="center-circle-content-qrcode" class="center-circle-content" style="width:100%; height:100%;"/>
     	            <div id="center-circle-content-resume" class="center-circle-content center-circle-content-text">
     	            	<div class="center-circle-content-text-chinese">我</div>
     	                <div class="center-circle-content-text-english">Resume</div>
@@ -95,8 +95,8 @@ less = {
 </script>
 <script type="text/javascript" src="http://libs.baidu.com/lesscss/1.3.0/less.min.js"></script>
 <?php if($inframe == true): else: ?>
-<script type="text/javascript" src="/cosmo_blog/Public/js/main.js"></script><?php endif; ?>
-<script type="text/javascript" src="/cosmo_blog/Public/js/index.js"></script>
-<?php if($inframe == true): ?><script type="text/javascript" src="/cosmo_blog/Public/js/index-inframe.js"></script><?php endif; ?>
+<script type="text/javascript" src="/Public/js/main.js"></script><?php endif; ?>
+<script type="text/javascript" src="/Public/js/index.js"></script>
+<?php if($inframe == true): ?><script type="text/javascript" src="/Public/js/index-inframe.js"></script><?php endif; ?>
 </body>
 </html>
