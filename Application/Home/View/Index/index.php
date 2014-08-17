@@ -10,6 +10,26 @@
 <if condition="$inframe eq true">
 <link rel="stylesheet/less" type="text/css" href="__ROOT____CSS__/index-inframe.css">
 </if>
+<script type="text/javascript">
+  App = {};
+  <?php if (APP_DEBUG) : ?>
+  App.isDebug = true;
+  <?php else: ?>
+  App.isDebug = false;
+  <?php endif; ?>
+  
+  console.secureLog = console.log;
+  console.secureWarn = console.warn;
+  console.secureTrace = console.trace;
+  console.secureError = console.error;
+  
+  if (!App.isDebug) {
+    console.log = function () {};
+    console.warn = function () {};
+    console.trace = function () {};
+    console.error = function () {};
+  }
+</script>
 </head>
 
 <body>
