@@ -253,4 +253,7 @@ $('.gallary-item img').load(function (argument) {
 		$(this).css('width', $('.gallary-item').width() + 'px');
 	}
 });
+$('.gallary-item img').error(function() {
+	this.src = "__IMG_RES__/default_150_170.png";
+})
 </script>
