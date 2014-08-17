@@ -1,4 +1,4 @@
-<link rel="stylesheet" type="text/css" href="__ROOT__/__CSS__/page-flag.css">
+<link rel="stylesheet" type="text/css" href="__ROOT____CSS__/page-flag.css">
 <style type="text/css">
 
 .main-container {
