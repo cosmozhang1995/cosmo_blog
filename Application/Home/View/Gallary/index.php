@@ -225,7 +225,7 @@
 							<div>
 								<div class="gallary-cover">
 									<div class="img-container">
-										<span><img src="{$gallary.cover_url}" /></span>
+										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src=__IMG_RES__/default_150_170.png" /></span>
 									</div>
 								</div>
 								<div class="gallary-cover-mask"></div>
@@ -253,7 +253,10 @@ $('.gallary-item img').load(function (argument) {
 		$(this).css('width', $('.gallary-item').width() + 'px');
 	}
 });
-$('.gallary-item img').error(function() {
-	this.src = "__IMG_RES__/default_150_170.png";
-})
+// function() {
+// 	this.src = "__IMG_RES__/default_150_170.png";
+// }
+// $('.gallary-item img').each(function() {
+// 	this.onError
+// })
 </script>
