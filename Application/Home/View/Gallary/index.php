@@ -225,7 +225,7 @@
 							<div>
 								<div class="gallary-cover">
 									<div class="img-container">
-										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src=__IMG_RES__/default_150_170.png" /></span>
+										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src='__IMG_RES__/default_150_170.png'" /></span>
 									</div>
 								</div>
 								<div class="gallary-cover-mask"></div>
