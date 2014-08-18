@@ -19,6 +19,7 @@ return array(
 		'__IMG_RES__'		=>	__ROOT__.'/Public/img',
 	),
 	'URL_HTML_SUFFIX'=>'',
+	'URL_CASE_INSENSITIVE'=>false,
 
 	//数据库配置信息
 	'DB_TYPE'		=> 'mysql',				// 数据库类型
