@@ -190,11 +190,40 @@ class GallaryController extends Controller {
 
 	public function deletePhotoHandlerAction() {
 		$Photo = D('Photo');
+		$thePhoto = $Photo->find(intval(I('post.id', '-1')));
 		$result = $Photo->where(array('id'=>intval(I('post.id', '-1'))))->delete();
-		if ($result) {
+		if ($result && $thePhoto) {
+			if (stripos($thePhoto['url'], '://') === false) {
+				// Not a remote resource
+				$theUrl = $thePhoto['url'];
+				if (!(stripos($theUrl, __ROOT__) === false)) {
+					$theUrl = substr($theUrl, stripos($theUrl, __ROOT__) + strlen(__ROOT__));
+				}
+				while (substr($theUrl, 0, 1) == '/') {
+					$theUrl = substr($theUrl, 1);
+				}
+				try {
+					\My\FileUtil::connect(STORAGE_TYPE);
+					\My\FileUtil::unlinkFile($theUrl);
+				} catch (Exception $e) {
+					$fileError = $e;
+				}
+			} elseif (stripos($thePhoto['url'], 'stor.sinaapp.com') > 0) {
+				try {
+					\My\FileUtil::connect(STORAGE_TYPE);
+					\My\FileUtil::unlinkFile($thePhoto['url']);
+				} catch (Exception $e) {
+					$fileError = $e;
+				}
+			}
 			$Photo->save();
-			$return_obj->msg = "";
-			$return_obj->status = 0;
+			if ($fileError) {
+				$return_obj->msg = $fileError->getMessage();
+				$return_obj->status = 1;
+			} else {
+				$return_obj->msg = "";
+				$return_obj->status = 0;
+			}
 		} else {
 			$return_obj->msg = $Photo->getError();
 			$return_obj->status = 2;

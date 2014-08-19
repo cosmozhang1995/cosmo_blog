@@ -319,6 +319,10 @@ function deletePhoto() {
       if (resp.status == 0) {
         $('#photo-item'+photoId).remove();
         cancelModal();
+      } else if (resp.status == 1) {
+        $('#photo-item'+photoId).remove();
+        alert('删除成功，但出了点问题：' + resp.msg);
+        cancelModal();
       } else {
         alert('删除失败：' + resp.msg);
       }
