@@ -55,7 +55,7 @@ class GallaryController extends Controller {
 		$this->display();
 	}
 
-	public function photosHandlerAction() {
+	public function photosApiAction() {
 		$id = intval(I('get.id', '-1'));
 		$Photo = D('Photo');
 		$photos_cnt = $Photo->where(array('gallary_id'=>$id))->count();

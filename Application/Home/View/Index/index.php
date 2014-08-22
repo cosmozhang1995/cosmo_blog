@@ -42,17 +42,17 @@
 				</a>
 			</div>
     		<div class="fanleaf-container fanleaf-container1">
-				<a href="{:U('/articles/')}" target="_top" class="fanleaf" id="fanleaf-pic">
+				<a href="{:U('/gallary/')}" target="_top" class="fanleaf" id="fanleaf-pic">
     		    	<span class="fa fa-picture-o"></span>
 				</a>
 			</div>
 		    <div class="fanleaf-container fanleaf-container4">
-				<a href="games/" target="_top" class="fanleaf" id="fanleaf-game">
+				<a href="javascript:void(0);" target="_top" class="fanleaf" id="fanleaf-game">
     		    	<span class="fa fa-paper-plane"></span>
 				</a>
 			</div>
     		<div class="fanleaf-container fanleaf-container3">
-				<a href="resume/" target="_top" class="fanleaf" id="fanleaf-resume">
+				<a href="{:U('/resume/')}" target="_top" class="fanleaf" id="fanleaf-resume">
     		    	<span class="fa fa-user"></span>
 				</a>
 			</div>

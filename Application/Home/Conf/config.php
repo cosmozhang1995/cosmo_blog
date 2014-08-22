@@ -22,8 +22,12 @@ return array(
 													=>	'Resume/index',
 
 
-		'/^api\/gallery\/(\d+)\/photos$/'
+		'/^api\/gallery$/'
 													=>	'Gallary/photosHandler?id=:1',
+		'/^api\/gallery\/(\d+)$/'
+													=>	'Gallary/photosHandler?id=:1',
+		'/^api\/gallery\/(\d+)\/photos$/'
+													=>	'Gallary/photosApi?id=:1',
 	),
 	'LAYOUT_ON'				=>	true,
 	'LAYOUT_NAME'			=>	'Public/common_layout'
