@@ -138,7 +138,7 @@ class GallaryController extends Controller {
 			$msg = "相册不存在";
 			$return_obj->msg = $msg;
 			$return_obj->status = 2;
-			return 0;
+			// return 0;
 		} else {
 			$upload = new \Think\Upload();
 			$upload->maxSize = 10485760;
