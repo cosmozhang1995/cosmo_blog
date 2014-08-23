@@ -1,6 +1,6 @@
 <?php
 
-$allowModules = array('Home');
+$allowModules = array('Home', 'Api');
 if (I('cookie.auth') == 'loveyan' || APP_DEBUG)
 	array_push($allowModules, 'Admin');
 

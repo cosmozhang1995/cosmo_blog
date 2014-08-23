@@ -30,3 +30,7 @@ function getTags($model) {
 function translateDate($timestamp) {
 	return date('Y/m/d H:i', $timestamp);
 }
+
+function httpError($code, $msg) {
+	header('HTTP/1.1 '.$code.' '.$msg);
+}
