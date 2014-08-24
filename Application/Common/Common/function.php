@@ -41,9 +41,9 @@ function httpError($code, $msg) {
  * @param  Array  $array  The array from which the element will be removed
  * @return int         How many elements removed
  */
-function array_remove($needle, $array) {
-	var $key = array_search($needle, $array);
-	var $cnt;
+function array_remove($needle, &$array) {
+	$key = array_search($needle, $array);
+	$cnt = 0;
 	while (!($key === false || $key === null)) {
 		$cnt++;
 		if (is_int($key)) {

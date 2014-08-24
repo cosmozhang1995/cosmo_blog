@@ -14,12 +14,14 @@ class CommonController extends Controller {
 			$this->putAction();
 		} elseif (IS_DELETE) {
 			$this->deleteAction();
+		} elseif (IS_GET) {
+			$this->getAction();
 		} elseif (IS_HEAD) {
 			$this->headAction();
 		} elseif (IS_AJAX) {
 			$this->ajaxAction();
 		} else {
-			$this->getAction();
+			$this->defautAction();
 		}
 	}
 
