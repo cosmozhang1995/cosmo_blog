@@ -34,3 +34,24 @@ function translateDate($timestamp) {
 function httpError($code, $msg) {
 	header('HTTP/1.1 '.$code.' '.$msg);
 }
+
+/**
+ * Remove a value-specified element from an array
+ * @param  Object $needle The value of the element to be removed
+ * @param  Array  $array  The array from which the element will be removed
+ * @return int         How many elements removed
+ */
+function array_remove($needle, $array) {
+	var $key = array_search($needle, $array);
+	var $cnt;
+	while (!($key === false || $key === null)) {
+		$cnt++;
+		if (is_int($key)) {
+			array_splice($array, $key, 1);
+		} else {
+			unset($array[$key]);
+		}
+		$key = array_search($needle, $array);
+	}
+	return $cnt;
+}
