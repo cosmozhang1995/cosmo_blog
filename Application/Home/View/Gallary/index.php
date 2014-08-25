@@ -221,19 +221,21 @@
 			<div id="catagory-body-{$tag.tag}" class="collapse in catagory-item-body">
 				<div class="gallary-list">
 					<volist name="tag.gallaries" id="gallary">
-						<a class="gallary-item" href="{:U('/gallery/'.$gallary['id'])}">
-							<div>
-								<div class="gallary-cover">
-									<div class="img-container">
-										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src='__IMG_RES__/default_180_210.png'" /></span>
+						<if condition="$gallary['show']">
+							<a class="gallary-item" href="{:U('/gallery/'.$gallary['id'])}">
+								<div>
+									<div class="gallary-cover">
+										<div class="img-container">
+											<span><img src="{$gallary.cover_url}" onerror="javascript:this.src='__IMG_RES__/default_180_210.png'" /></span>
+										</div>
+									</div>
+									<div class="gallary-cover-mask"></div>
+									<div class="gallary-cover-description">
+										<span>{$gallary.title}</span>
 									</div>
 								</div>
-								<div class="gallary-cover-mask"></div>
-								<div class="gallary-cover-description">
-									<span>{$gallary.title}</span>
-								</div>
-							</div>
-						</a>
+							</a>
+						</if>
 					</volist>
 					<div style="clear:both;"></div>
 				</div>

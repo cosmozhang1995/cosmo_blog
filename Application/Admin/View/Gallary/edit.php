@@ -42,6 +42,19 @@
             </volist>
           </select>
         </div>
+
+        <div class="form-group">
+          <label for="exampleInputPassword1">显示</label>
+          <select id="show" name="show">
+            <?php if ($isnew || $gallary['show']): ?>
+              <option value="1" selected="selected">显示</option>
+              <option value="0">隐藏</option>
+            <?php else: ?>
+              <option value="1">显示</option>
+              <option value="0" selected="selected">隐藏</option>
+            <?php endif; ?>
+          </select>
+        </div>
         
         <label for="description">描述</label>
         <textarea id="content-editor" name="description" class="form-control">{$gallary.description}</textarea>

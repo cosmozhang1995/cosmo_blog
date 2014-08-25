@@ -213,3 +213,15 @@ function setFanNav(show) {
 		});
 	};
 }
+
+function onBodyScroll() {
+	if (document.body.scrollTop <= 30) {
+		$('#goto-top').hide();
+	} else {
+		$('#goto-top').show();
+	}
+}
+
+$(document).ready(function() {
+	onBodyScroll();
+});

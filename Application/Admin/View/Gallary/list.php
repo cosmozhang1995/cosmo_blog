@@ -43,7 +43,7 @@
       <div class="row">
       <div class="list-group">
         <volist name="list" id="item">
-          <a href="javascript:void(0);" onclick="adminPhotos({$item.id});return false;" class="list-group-item">
+          <a href="javascript:void(0);" class="list-group-item">
             <h4 class="list-group-item-heading">{$item.title}</h4>
             <p class="list-group-item-text">
               <span class="label label-info">{$item.tag|translateTag="Gallary",###}</span> - 
@@ -51,6 +51,9 @@
             </p>
             <p>
               <div class="btn-group btn-group-justified" style>
+                <div class="btn-group">
+                  <button class="btn btn-success" onclick="adminPhotos({$item.id});return false;" href="">管理</button>
+                </div>
                 <div class="btn-group">
                   <button class="btn btn-info" onclick="editGallary({$item.id});return false;" href="">编辑</button>
                 </div>

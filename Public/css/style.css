@@ -409,3 +409,29 @@ body {
 	height: 20px;
 	position: relative;
 }
+
+.goto-top-container {
+	position: fixed;
+	right: 60px;
+	bottom: 60px;
+	display: none;
+}
+.goto-top {
+	cursor: pointer;
+	/*width: 40px;
+	height: 40px;*/
+	display: inline-block;
+	border-radius: 19%;
+	background-color: rgba(0,0,0,0.3);
+	padding: 14%;
+}
+.goto-top > .fa {
+	/*font-size: 30px;*/
+	color: rgba(255,255,255,0.8);
+}
+.goto-top:hover {
+	background-color: rgba(0,0,0,0.5);
+}
+.goto-top:hover > .fa {
+	color: rgba(255,255,255,1);
+}

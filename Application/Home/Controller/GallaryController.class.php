@@ -37,7 +37,7 @@ class GallaryController extends Controller {
 		$this->assign('gallaries',$gallariesInTags);
 
 		$this->assign('page_info',array('title'=>'相册'));
-		$this->assign('page_flag',array('title'=>'相&nbsp;&nbsp;&nbsp;册', 'subtitle'=>''));
+		$this->assign('page_flag',array('title'=>'相&nbsp;&nbsp;&nbsp;册', 'subtitle'=>'记录点滴生活'));
 		
 		$this->display();
 	}

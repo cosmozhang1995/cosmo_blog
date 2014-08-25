@@ -1,7 +1,11 @@
 <?php
 namespace Common\Model;
-use Think\Model;
-class GallaryModel extends Model {
+use Think\Model\AdvModel;
+class GallaryModel extends AdvModel {
+	protected $_filter = array(
+		'id'=>array(null,'intval', false),
+		'create_time'=>array(null,'intval', false),
+	);
 	protected $_validate = array(
 		array('title', 'require', '标题必需'),
 		array('tag', 'require', '标签必需')
