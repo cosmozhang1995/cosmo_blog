@@ -1,12 +1,12 @@
 <style type="text/css">
 
 .article-container {
-	background-color: #0099FF;
-	padding-left: 100px;
-	padding-right: 100px;
+	/*background-color: #0099FF;*/
+	padding-left: 20px;
+	padding-right: 20px;
 	padding-top: 30px;
 	margin-top: 50px;
-	box-shadow: 0 0 3px rgba(0,0,0,0.5);
+	/*box-shadow: 0 0 3px rgba(0,0,0,0.5);*/
 }
 
 .title {
@@ -20,7 +20,7 @@
 	/*text-shadow: 1px 1px 2px #3399FF, 0 0 0 #000;
 	color: rgba(0,0,0,0.4);*/
 	text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-	color: #fff;
+	color: #000;
 }
 
 .subtitle {
@@ -31,11 +31,11 @@
 }
 
 .calendar {
-	color: #EEE;
+	color: #666;
 	margin-right: 10px;
 }
 .calendar:hover {
-	color: #fff;
+	color: #000;
 }
 
 .label {
@@ -50,7 +50,7 @@
 	margin-top: 20px;
 	padding-top: 10px;
 	padding-bottom: 40px;
-	color: #fff;
+	color: #000;
 }
 
 .main-container {

@@ -30,7 +30,7 @@ class GallaryController extends Controller {
 			}
 			$cover = $Photo->find($value['cover_photo_id']);
 			if ($cover) $value['cover_url'] = $cover['url'];
-			else $value['cover_url'] = C('TMPL_PARSE_STRING')['__IMG_RES__'].'/default_150_170.png';
+			else $value['cover_url'] = '/blackhole.png';
 			array_push($gallariesInTags[$theTag]['gallaries'], $value);
 		}
 

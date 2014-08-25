@@ -22,11 +22,11 @@
 .catagory-item-header {
 	margin-bottom: 10px;
 	font-size: 20px;
-	color: #fff;
-	text-shadow: 0 0 1px #000;
+	color: #000;
+	/*text-shadow: 0 0 1px #000;*/
 	cursor: pointer;
 	padding: 3px;
-	padding-left: 10px;
+	padding-left: 20px;
 
 	user-select: none;
 	-moz-user-select: none;
@@ -54,12 +54,12 @@
 	display: block;
 	float: left;
 
-	margin: 5px;
-	width: 150px;
-	height: 170px;
+	margin: 5px 15px;
+	width: 180px;
+	height: 210px;
 	line-height: 170px;
 
-	box-shadow: 0px 1px 3px 0px #000;
+	box-shadow: 0px 1px 7px -2px #000;
 }
 .gallary-item > div {
 	position: relative;
@@ -92,10 +92,10 @@
 }
 /* Adjustment */
 .img-container img {
-	margin-left: -4px;
+	/*margin-left: -4px;*/
 }
 .gallary-cover .img-container:before, .gallary-cover .img-container:after {
-	content: "";
+	/*content: "";*/
 }
 .gallary-cover img {
 	width: 150px;
@@ -217,7 +217,7 @@
 <div class="catagory-list-container">
 	<volist name="gallaries" id="tag">
 		<div class="catagory-item">
-			<div id="catagory-header-{$tag.tag}" class="catagory-item-header" data-toggle="collapse" data-target="#catagory-body-{$tag.tag}"><span class="fa fa-tag"></span>{$tag.tag|translateTag="Gallary",###}</div>
+			<div id="catagory-header-{$tag.tag}" class="catagory-item-header" data-toggle="collapse" data-target="#catagory-body-{$tag.tag}"><!-- <span class="fa fa-tag"></span> -->{$tag.tag|translateTag="Gallary",###}</div>
 			<div id="catagory-body-{$tag.tag}" class="collapse in catagory-item-body">
 				<div class="gallary-list">
 					<volist name="tag.gallaries" id="gallary">
@@ -225,7 +225,7 @@
 							<div>
 								<div class="gallary-cover">
 									<div class="img-container">
-										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src='__IMG_RES__/default_150_170.png'" /></span>
+										<span><img src="{$gallary.cover_url}" onerror="javascript:this.src='__IMG_RES__/default_180_210.png'" /></span>
 									</div>
 								</div>
 								<div class="gallary-cover-mask"></div>
