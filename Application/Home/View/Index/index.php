@@ -81,7 +81,7 @@
     	            </div>
     	            <div id="center-circle-content-game" class="center-circle-content center-circle-content-text">
     	            	<div class="center-circle-content-text-chinese">玩</div>
-    	                <div class="center-circle-content-text-english">Games</div>
+    	                <div class="center-circle-content-text-english">Newbies</div>
     	            </div>
     	        </div>
     	        <div class="center-circle-content-fit">
