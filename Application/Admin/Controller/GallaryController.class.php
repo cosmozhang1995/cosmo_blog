@@ -7,10 +7,6 @@ class GallaryController extends Controller {
 	}
 
 	public function listAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$page = intval(I('get.page', '1'));
 		$amount = intval(I('get.pn', '10'));
 		$begin = intval(I('get.ps', ($page-1)*$amount));
@@ -38,10 +34,6 @@ class GallaryController extends Controller {
 	}
 
 	public function editAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$id = intval(I('get.id', '-1'));
 		$isnew = !($id >= 0);
 		$result = null;
@@ -58,10 +50,6 @@ class GallaryController extends Controller {
 	}
 
 	public function updateAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$Gallary = D('Gallary');
 		$result = $Gallary->create();
 		if ($result) $Gallary->save();
@@ -76,10 +64,6 @@ class GallaryController extends Controller {
 	}
 
 	public function createAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$Gallary = D('Gallary');
 		$result = $Gallary->create();
 		if ($result) $Gallary->add();
@@ -94,10 +78,6 @@ class GallaryController extends Controller {
 	}
 
 	public function deleteAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$id = intval(I('get.id', '-1'));
 		$Gallary = D('Gallary');
 		$result = $Gallary->delete($id);
@@ -112,10 +92,6 @@ class GallaryController extends Controller {
 	}
 
 	public function updateHandlerAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$Gallary = D('Gallary');
 		$result = $Gallary->create();
 		if ($result) $Gallary->save();
@@ -129,10 +105,6 @@ class GallaryController extends Controller {
 	}
 
 	public function adminPhotosAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$id = intval(I('get.id', '-1'));
 		$Gallary = D('Gallary');
 		$gallary = $Gallary->find($id);
@@ -147,10 +119,6 @@ class GallaryController extends Controller {
 	}
 
 	public function uploadPhotosAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$id = intval(I('get.id', '-1'));
 		$Gallary = D('Gallary');
 		$gallary = $Gallary->find($id);
@@ -162,10 +130,6 @@ class GallaryController extends Controller {
 	}
 
 	public function uploadPhotosHandlerAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$id = intval(I('get.id', '-1'));
 		$Gallary = D('Gallary');
 		$gallary = $Gallary->find($id);
@@ -215,10 +179,6 @@ class GallaryController extends Controller {
 	}
 
 	public function updatePhotoHandlerAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
 		$Photo = D('Photo');
 		$result = $Photo->create();
 		if ($result) {
