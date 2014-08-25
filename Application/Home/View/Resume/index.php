@@ -433,8 +433,8 @@
 </div>
 
 <script type="text/javascript">
-var mySkills = 
-function personalSkills (skills) {
+var mySkills = {};
+var personalSkills = function(skills) {
 	var skills = skills;
 
 	function addSkill(skill) {
@@ -466,8 +466,12 @@ function personalSkills (skills) {
 	initialSkills();
 }
 $(document).ready(function() {
-	personalSkills(mySkills);
+	$.getJSON("{:U('/api/resume/skills')}", function(data) {
+		mySkills = data;
+		personalSkills(mySkills);
+	});
 });
+
 </script>
 <script type="text/javascript">
 var myCourse = {
@@ -494,111 +498,9 @@ var myCourse = {
 			'foot': 'TODAY'
 		}
 	},
-	education: [
-		{
-			'startYear': 2009,
-			'startMonth': 9,
-			'endYear': 2012,
-			'endMonth': 6,
-			'tag': 'Senior High',
-			'title': '河南省信阳高中',
-			'desc': '校信息办助理'
-		},
-		{
-			'startYear': 2012,
-			'startMonth': 9,
-			'endYear': null,
-			'endMonth': null,
-			'tag': 'University',
-			'title': '北京邮电大学',
-			'desc': '通信工程专业试点班培养方案<br/>北邮学生会网络部副部长'
-		}
-	],
-	career: [
-		{
-			'startYear': 2012,
-			'startMonth': 9,
-			'endYear': 2014,
-			'endMonth': 6,
-			'tag': 'Campus Geek',
-			'title': '北京邮电大学学生会',
-			'desc': '<i class="fa fa-user"></i>&nbsp;网络部副部长<br/><br/>主讲部门内部软件开发技能培训<br/>主持学生会官网、微信平台、手机App等新媒体平台开发和运维<br/>在任期间学生会网络宣传力度达到高潮'
-		},
-		{
-			'startYear': 2014,
-			'startMonth': 6,
-			'endYear': 2014,
-			'endMonth': 12,
-			'tag': 'Front End',
-			'title': '搜狐北京研发中心',
-			'desc': '<i class="fa fa-user"></i>&nbsp;前端工程师<br/><br/>在职期间独立完成搜狐Otocyon系统前端<br/>查找修复项目过去前端遗留下来的问题，并整理代码'
-		}
-	],
-	project: [
-		{
-			'startYear': 2013,
-			'startMonth': 3,
-			'endYear': 2013,
-			'endMonth': 7,
-			'tag': 'Android App',
-			'title': '北邮学生会Android客户端',
-			'desc': '<i class="fa fa-user"></i>&nbsp;负责人<br/><br/>主责整个 App 的开发<br/>负责课表查询功能模块的开发<br/>负责指导服务器端程序开发'
-		},
-		{
-			'startYear': 2013,
-			'startMonth': 8,
-			'endYear': 2013,
-			'endMonth': 12,
-			'tag': 'Website',
-			'title': '北邮学生会官方网站',
-			'desc': '<i class="fa fa-user"></i>&nbsp;负责人<br/><br/>主责整个网站的开发<br/>指导前端开发<br/>协调前端程序员和 UI 平面设计人员<br/>负责指导服务器端程序开发'
-		},
-		{
-			'startYear': 2013,
-			'startMonth': 12,
-			'endYear': 2014,
-			'endMonth': 1,
-			'tag': 'Wechat',
-			'title': '“北邮学生会”微信平台',
-			'desc': '<i class="fa fa-user"></i>&nbsp;独立开发者<br/><br/>使用 PHP 语言开发<br/>结合微信平台特性, 创造性地使用了“动作链”的思想,使得平台具有高拓展性和可编辑性。'
-		},
-		{
-			'startYear': 2014,
-			'startMonth': 3,
-			'endYear': 2014,
-			'endMonth': 6,
-			'tag': 'Android App',
-			'title': '基于大数据与智能优化算法的智慧校园安卓应用开发项目',
-			'desc': '<i class="fa fa-user"></i>&nbsp;技术负责人<br/><br/>统筹合并各版块程序<br/>负责“学生教学和生活信息查询”的开发<br/>获得了北京邮电大学 15 万元的投资'
-		},
-		{
-			'startYear': 2014,
-			'startMonth': 3,
-			'endYear': 2014,
-			'endMonth': 6,
-			'tag': 'Web App',
-			'title': '大学生创业项目“停吧”',
-			'desc': '<i class="fa fa-user"></i>&nbsp;技术负责人<br/><br/>空闲车位自由出租/租赁平台<br/>结合微信平台,打造了一个基于 HTML5 的移动应用<br/>2014年北京市“创青春”大学生创业大赛银奖<br/><br/>负责前端开发<br/>协助后台程序开发'
-		},
-		{
-			'startYear': 2014,
-			'startMonth': 3,
-			'endYear': 2014,
-			'endMonth': 5,
-			'tag': 'Wechat',
-			'title': '大学生创业项目“基于微信的电子会员卡:云台”',
-			'desc': '<i class="fa fa-user"></i>&nbsp;技术负责人<br/><br/>负责前端开发，协助后台程序开发<br/>为小微商铺开发微信平台电子会员卡系统及OA系统<br/>开发自有微信平台,方便客人统一管理自己的会员卡<br/>已为北京邮电大学周边十余家商铺提供会员卡系统，使得这些商铺的业绩有了显著提升'
-		},
-		{
-			'startYear': 2014,
-			'startMonth': 6,
-			'endYear': 2014,
-			'endMonth': 8,
-			'tag': 'Web Application',
-			'title': '搜狐公司Otocyon数据中心智能管理平台',
-			'desc': '<i class="fa fa-user"></i>&nbsp;前端工程师<br/><br/>主责前端开发<br/>指导后台通过代理方式完成跨站登录<br/>修复过往前端遗留的BUG，整理杂乱的代码<br/>完成前端项目文档'
-		}
-	]
+	education: [],
+	career: [],
+	project: []
 }
 function personalCourse(course) {
 
@@ -785,5 +687,31 @@ function personalCourse(course) {
 }
 $(document).ready(function() {
 	personalCourse(myCourse);
+});
+$(document).ready(function() {
+	var eduLoaded = false;
+	var careerLoaded = false;
+	var projectsLoaded = false;
+	$.getJSON("{:U('/api/resume/education')}", function(data) {
+		myCourse['education'] = data;
+		eduLoaded = true;
+		if (eduLoaded && careerLoaded && projectsLoaded) {
+			personalCourse(myCourse);
+		}
+	});
+	$.getJSON("{:U('/api/resume/career')}", function(data) {
+		myCourse['career'] = data;
+		careerLoaded = true;
+		if (eduLoaded && careerLoaded && projectsLoaded) {
+			personalCourse(myCourse);
+		}
+	});
+	$.getJSON("{:U('/api/resume/projects')}", function(data) {
+		myCourse['project'] = data;
+		projectsLoaded = true;
+		if (eduLoaded && careerLoaded && projectsLoaded) {
+			personalCourse(myCourse);
+		}
+	});
 });
 </script>

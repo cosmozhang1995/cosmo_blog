@@ -59,3 +59,23 @@ function array_remove($needle, &$array) {
 function htmlContentReadFilter($content) {
 	return htmlspecialchars_decode($content);
 }
+
+function getAsset($path, $method) {
+	// $filename = __ROOT__.'/Public/assets/'.(trim(trim($path), '/'));
+	$filename = './Public/assets/'.(trim(trim($path), '/'));
+	if (!is_string($method)) $method = "r";
+	if ($method == "r") {
+		$contents = file_get_contents($filename);
+	} else {
+		$handle = fopen($filename, $method);
+		$contents = fread($handle, filesize($filename));
+		fclose($handle);
+	}
+	return $contents;
+}
+
+function jsonFetchAction($filename) {
+	$content = getAsset($filename);
+	if ($content) echo $content;
+	else httpError(404, "Content not found");
+}
