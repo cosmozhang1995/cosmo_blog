@@ -3,8 +3,10 @@ return array(
 	//'配置项'=>'配置值'
 	'URL_ROUTER_ON'		=>	true,
 	'URL_ROUTE_RULES'	=>	array(
-		'/^gellery$/'												=>	'Gallary/photosHandler?id=:1',
-		'/^gellery\/(\d+)$/'								=>	'Gallary/photosHandler?id=:1',
+		'/^article$/'												=>	'Article/index',
+		'/^article\/(\d+)$/'								=>	'Article/index?id=:1',
+		'/^gallery$/'												=>	'Gallery/index',
+		'/^gallery\/(\d+)$/'								=>	'Gallery/index?id=:1',
 		'/^photo$/'													=>	'Photo/index',
 		'/^photo\/(\d+)$/'									=>	'Photo/index?id=:1',
 		'/^photo\/gallery\/(\d+)$/'					=>	'Photo/getByGallery?gallary_id=:1',

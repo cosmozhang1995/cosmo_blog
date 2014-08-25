@@ -55,3 +55,7 @@ function array_remove($needle, &$array) {
 	}
 	return $cnt;
 }
+
+function htmlContentReadFilter($content) {
+	return htmlspecialchars_decode($content);
+}

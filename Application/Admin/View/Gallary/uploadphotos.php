@@ -67,79 +67,85 @@
 
 <body>
 <div class="container" style="">
-<present name="message">
-<div class="row">
-  <p>
-    <div class="alert alert-dismissible {$message.status|translateStatus2Alert}" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      {$message.msg}
+  <div class="row">
+    <div class="col-md-2">
+      <include file="Public:common_nav"/>
     </div>
-  </p>
-</div>
-</present>
-<div class="row">
-<div class="page-header">
-  <h1>上传照片 - {$gallary.title}&nbsp;<small>记录点滴生活</small></h1>
-</div>
-</div>
-<div class="row">
-  <div class="col-12" style="margin-bottom: 10px;">
-    <a type="button" class="btn btn-lg btn-success" href="javascript:void(0);" onclick="selectFiles();">添加</a>
-    <a type="button" class="btn btn-lg btn-primary" href="javascript:void(0);" onclick="uploadFiles();">上传</a>
-  </div>
-</div>
-
-<div class="row">
-  <div id="main-progress-container" class="progress-container" style="display:none;" >
-    <div class="progress">
-      <div id="main-progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; min-width: 20px;">
-        <span class="sr-only">60%</span>
+    <div class="col-md-10">
+      <present name="message">
+      <div class="row">
+        <p>
+          <div class="alert alert-dismissible {$message.status|translateStatus2Alert}" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            {$message.msg}
+          </div>
+        </p>
       </div>
-    </div>
-  </div>
-  <script type="text/javascript"></script>
-</div>
-
-<form>
-<input id="file-selector" type="file" multiple onchange="updateFiles();" style="display:none;" />
-<div class="row">
-  <div id="list-group-example" class="list-group" style="display:none;">
-    <div id="photo-item{id}" href="javascript:void(0);" class="list-group-item photo-item">
-      <a class="remove-button" href="javascript:void(0);" onclick="removePhoto({id});" ><i class="fa fa-times"></i></a>
-      <div class="preview-container">
-        <!-- <img id="preview-image{id}" class="preview-img" /> -->
-        <a href="javascript:void(0);" onclick="showModal({id});" >
-          <div class="preview-div">
-            <img id="preview-image{id}" class="preview-img" />
-          </div>
-        </a>
+      </present>
+      <div class="row">
+      <div class="page-header">
+        <h1>上传照片 - {$gallary.title}&nbsp;<small>记录点滴生活</small></h1>
       </div>
-      <div class="info-container">
-        <div>
-          <div class="form-group">
-            <label for="title">标题</label>
-            <input id="title{id}" type="text" class="form-control" name="title" placeholder="标题" onchange="updateValues({id});" />
-          </div>
-          <div class="form-group">
-            <label for="description">描述</label>
-            <textarea id="description{id}" type="text" class="form-control" name="description" placeholder="描述" rows=3 onchange="updateValues({id});"></textarea>
-          </div>
+      </div>
+      <div class="row">
+        <div class="col-12" style="margin-bottom: 10px;">
+          <a type="button" class="btn btn-lg btn-success" href="javascript:void(0);" onclick="selectFiles();">添加</a>
+          <a type="button" class="btn btn-lg btn-primary" href="javascript:void(0);" onclick="uploadFiles();">上传</a>
         </div>
       </div>
-      <div class="progress-container" style="display:none;">
-        <div class="progress">
-          <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-            <span class="sr-only">60% Complete</span>
+      
+      <div class="row">
+        <div id="main-progress-container" class="progress-container" style="display:none;" >
+          <div class="progress">
+            <div id="main-progress" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%; min-width: 20px;">
+              <span class="sr-only">60%</span>
+            </div>
           </div>
         </div>
+        <script type="text/javascript"></script>
       </div>
+      
+      <form>
+      <input id="file-selector" type="file" multiple onchange="updateFiles();" style="display:none;" />
+      <div class="row">
+        <div id="list-group-example" class="list-group" style="display:none;">
+          <div id="photo-item{id}" href="javascript:void(0);" class="list-group-item photo-item">
+            <a class="remove-button" href="javascript:void(0);" onclick="removePhoto({id});" ><i class="fa fa-times"></i></a>
+            <div class="preview-container">
+              <!-- <img id="preview-image{id}" class="preview-img" /> -->
+              <a href="javascript:void(0);" onclick="showModal({id});" >
+                <div class="preview-div">
+                  <img id="preview-image{id}" class="preview-img" />
+                </div>
+              </a>
+            </div>
+            <div class="info-container">
+              <div>
+                <div class="form-group">
+                  <label for="title">标题</label>
+                  <input id="title{id}" type="text" class="form-control" name="title" placeholder="标题" onchange="updateValues({id});" />
+                </div>
+                <div class="form-group">
+                  <label for="description">描述</label>
+                  <textarea id="description{id}" type="text" class="form-control" name="description" placeholder="描述" rows=3 onchange="updateValues({id});"></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="progress-container" style="display:none;">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
+                  <span class="sr-only">60% Complete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="list-group" class="list-group">
+        </div>
+      </div>
+      </form>
     </div>
   </div>
-  <div id="list-group" class="list-group">
-  </div>
-</div>
-</form>
-
 </div>
 
 

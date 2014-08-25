@@ -29,6 +29,7 @@ class GallaryController extends Controller {
 		$this->assign('pn',$amount);
 		$this->assign('ps',$begin);
 
+		$this->assign('controller', 'gallary');
 		$this->display();
 	}
 
@@ -44,6 +45,7 @@ class GallaryController extends Controller {
 		$this->assign('isnew',$isnew);
 		$this->assign('gallary',$result);
 		$this->assign('tags',getTags("Gallary"));
+		$this->assign('controller', 'gallary');
 		$this->display('edit');
 	}
 
@@ -112,6 +114,7 @@ class GallaryController extends Controller {
 		$this->assign('gallary',$gallary);
 		$this->assign('photos',$photos);
 
+		$this->assign('controller', 'gallary');
 		$this->display();
 	}
 
@@ -122,6 +125,7 @@ class GallaryController extends Controller {
 
 		$this->assign('gallary',$gallary);
 
+		$this->assign('controller', 'gallary');
 		$this->display();
 	}
 

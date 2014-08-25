@@ -128,42 +128,48 @@ div.desc {
 
 <body>
 <div class="container" style="">
-<present name="message">
-<div class="row">
-  <p>
-    <div class="alert alert-dismissible {$message.status|translateStatus2Alert}" role="alert">
-      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-      {$message.msg}
+  <div class="row">
+    <div class="col-md-2">
+      <include file="Public:common_nav"/>
     </div>
-  </p>
-</div>
-</present>
-<div class="row">
-<div class="page-header">
-  <h1>相册 - {$gallary.title}&nbsp;<small>记录点滴生活</small></h1>
-</div>
-</div>
-<div class="row">
-  <div class="col-12" style="margin-bottom: 10px;">
-    <a type="button" class="btn btn-lg btn-success" href={:U('Gallary/uploadPhotos', 'id='.$gallary['id'])}>上传照片</a>
-  </div>
-</div>
-
-<div class="row">
-  <script type="text/javascript">photoList = [];</script>
-  <volist name="photos" id="photo">
-    <script type="text/javascript">photoList.push(<?php echo json_encode($photo); ?>);</script>
-    <div id="photo-item{$photo.id}" class="img-container">
-      <a class="img" href="javascript:void(0);" onclick="showPhotoInModal({$photo.id});">
-        <div class="img-inner" >
-          <img src="{$photo.url}" alt="{$photo.title}" />
+    <div class="col-md-10">
+      <present name="message">
+      <div class="row">
+        <p>
+          <div class="alert alert-dismissible {$message.status|translateStatus2Alert}" role="alert">
+            <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            {$message.msg}
+          </div>
+        </p>
+      </div>
+      </present>
+      <div class="row">
+      <div class="page-header">
+        <h1>相册 - {$gallary.title}&nbsp;<small>记录点滴生活</small></h1>
+      </div>
+      </div>
+      <div class="row">
+        <div class="col-12" style="margin-bottom: 10px;">
+          <a type="button" class="btn btn-lg btn-success" href={:U('Gallary/uploadPhotos', 'id='.$gallary['id'])}>上传照片</a>
         </div>
-      </a>
-      <div class="desc">{$photo.title}</div>
+      </div>
+      
+      <div class="row">
+        <script type="text/javascript">photoList = [];</script>
+        <volist name="photos" id="photo">
+          <script type="text/javascript">photoList.push(<?php echo json_encode($photo); ?>);</script>
+          <div id="photo-item{$photo.id}" class="img-container">
+            <a class="img" href="javascript:void(0);" onclick="showPhotoInModal({$photo.id});">
+              <div class="img-inner" >
+                <img src="{$photo.url}" alt="{$photo.title}" />
+              </div>
+            </a>
+            <div class="desc">{$photo.title}</div>
+          </div>
+        </volist>
+      </div>
     </div>
-  </volist>
-</div>
-
+  </div>
 </div>
 
 

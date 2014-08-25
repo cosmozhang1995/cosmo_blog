@@ -29,6 +29,7 @@ class ArticleController extends Controller {
 		$this->assign('pn',$amount);
 		$this->assign('ps',$begin);
 
+		$this->assign('controller', 'article');
 		$this->display();
 	}
 
@@ -43,7 +44,8 @@ class ArticleController extends Controller {
 		}
 		$this->assign('isnew',$isnew);
 		$this->assign('article',$result);
-		$this->assign('tags',getTags());
+		$this->assign('tags',getTags('Article'));
+		$this->assign('controller', 'article');
 		$this->display('edit');
 	}
 

@@ -15,32 +15,39 @@
 
 <body>
 <div class="container" style="">
-<?php if (false): ?>
-<div class="alert alert-danger" role="alert">...</div>
-<?php endif; ?>
-<form role="form" method="post" action="{$isnew?U('Gallary/create'):U('Gallary/update')}">
-  <input type="hidden" id="id" name="id" value="{$gallary.id}" />
-  <div class="form-group">
-    <label for="title">标题</label>
-    <input type="text" class="form-control" id="title" name="title" placeholder="标题" value="{$gallary.title}" />
+  <div class="row">
+    <div class="col-md-2">
+      <include file="Public:common_nav"/>
+    </div>
+    <div class="col-md-10">
+      <?php if (false): ?>
+      <div class="alert alert-danger" role="alert">...</div>
+      <?php endif; ?>
+      <form role="form" method="post" action="{$isnew?U('Gallary/create'):U('Gallary/update')}">
+        <input type="hidden" id="id" name="id" value="{$gallary.id}" />
+        <div class="form-group">
+          <label for="title">标题</label>
+          <input type="text" class="form-control" id="title" name="title" placeholder="标题" value="{$gallary.title}" />
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">标签</label>
+          <select id="tag" name="tag" value="{$gallary.tag}">
+            <volist name="tags" id="item">
+              <if condition="$item['name'] eq $gallary['tag']" >
+                <option value="{$item.name}" selected="selected">{$item.tag}</option>
+              <else/>
+                <option value="{$item.name}">{$item.tag}</option>
+              </if>
+            </volist>
+          </select>
+        </div>
+        
+        <label for="description">描述</label>
+        <textarea id="content-editor" name="description" class="form-control">{$gallary.description}</textarea>
+        <button type="submit" class="btn btn-default" style="margin-top: 10px;">Submit</button>
+      </form>
+    </div>
   </div>
-  <div class="form-group">
-    <label for="exampleInputPassword1">标签</label>
-    <select id="tag" name="tag" value="{$gallary.tag}">
-    	<volist name="tags" id="item">
-        <if condition="$item['name'] eq $gallary['tag']" >
-          <option value="{$item.name}" selected="selected">{$item.tag}</option>
-        <else/>
-          <option value="{$item.name}">{$item.tag}</option>
-        </if>
-      </volist>
-    </select>
-  </div>
-  
-  <label for="description">描述</label>
-  <textarea id="content-editor" name="description" class="form-control">{$gallary.description}</textarea>
-  <button type="submit" class="btn btn-default" style="margin-top: 10px;">Submit</button>
-</form>
 </div>
 
 </body>
