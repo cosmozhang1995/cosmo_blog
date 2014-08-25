@@ -1,8 +1,6 @@
 <?php
 
-$allowModules = array('Home', 'Api');
-if (I('cookie.auth') == 'loveyan' || APP_DEBUG)
-	array_push($allowModules, 'Admin');
+$allowModules = array('Home', 'Api', 'Admin');
 
 return array(
 	//'配置项'=>'配置值'
