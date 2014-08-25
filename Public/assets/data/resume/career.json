@@ -1,0 +1,20 @@
+[
+	{
+		"startYear": 2012,
+		"startMonth": 9,
+		"endYear": 2014,
+		"endMonth": 6,
+		"tag": "Campus Geek",
+		"title": "北京邮电大学学生会",
+		"desc": "<i class=\"fa fa-user\"></i>&nbsp;网络部副部长<br/><br/>主讲部门内部软件开发技能培训<br/>主持学生会官网、微信平台、手机App等新媒体平台开发和运维<br/>在任期间学生会网络宣传力度达到高潮"
+	},
+	{
+		"startYear": 2014,
+		"startMonth": 6,
+		"endYear": 2014,
+		"endMonth": 12,
+		"tag": "Front End",
+		"title": "搜狐北京研发中心",
+		"desc": "<i class=\"fa fa-user\"></i>&nbsp;前端工程师<br/><br/>在职期间独立完成搜狐Otocyon系统前端<br/>查找修复项目过去前端遗留下来的问题，并整理代码"
+	}
+]

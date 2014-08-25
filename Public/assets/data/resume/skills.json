@@ -1,0 +1,244 @@
+[
+	{
+		"name": "js",
+		"displayName": "JavaScript",
+		"css": {
+			"backgroundColor": "#1FFF00",
+			"x": -70,
+			"y": 0,
+			"size": 100,
+			"fontSize": 16
+		}
+	},
+	{
+		"name": "css",
+		"displayName": "CSS",
+		"css": {
+			"backgroundColor": "#E8B50C",
+			"x": 70,
+			"y": 0,
+			"size": 100,
+			"fontSize": 22
+		}
+	},
+	{
+		"name": "python",
+		"displayName": "Python",
+		"css": {
+			"backgroundColor": "#7C0CE8",
+			"x": -180,
+			"y": 40,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "php",
+		"displayName": "PHP",
+		"css": {
+			"backgroundColor": "#0DC8FF",
+			"x": -180,
+			"y": -40,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "objc",
+		"displayName": "Obj C",
+		"css": {
+			"backgroundColor": "#FFF602",
+			"x": -250,
+			"y": -80,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "cpp",
+		"displayName": "C/C++",
+		"css": {
+			"backgroundColor": "#E8670A",
+			"x": -250,
+			"y": 0,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "java",
+		"displayName": "Java",
+		"css": {
+			"backgroundColor": "#FF02FF",
+			"x": -250,
+			"y": 80,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "ajax",
+		"displayName": "AJAX",
+		"css": {
+			"backgroundColor": "#0A52E8",
+			"x": 0,
+			"y": -80,
+			"size": 80,
+			"fontSize": 14
+		}
+	},
+	{
+		"name": "jquery",
+		"displayName": "jQuery",
+		"css": {
+			"backgroundColor": "#FF02FF",
+			"x": 0,
+			"y": 80,
+			"size": 80,
+			"fontSize": 14
+		}
+	},
+	{
+		"name": "mysql",
+		"displayName": "MySQL",
+		"css": {
+			"backgroundColor": "#0BFF60",
+			"x": -320,
+			"y": -40,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "linux",
+		"displayName": "RHEL",
+		"css": {
+			"backgroundColor": "#E8B50C",
+			"x": -320,
+			"y": 40,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "thinkphp",
+		"displayName": "ThinkPHP",
+		"css": {
+			"backgroundColor": "#0BFF60",
+			"x": 320,
+			"y": -40,
+			"size": 50,
+			"fontSize": 10
+		}
+	},
+	{
+		"name": "ssh",
+		"displayName": "SSH",
+		"css": {
+			"backgroundColor": "#E8B50C",
+			"x": 320,
+			"y": 40,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "ember",
+		"displayName": "Ember",
+		"css": {
+			"backgroundColor": "#E8670A",
+			"x": -100,
+			"y": -90,
+			"size": 60,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "restful",
+		"displayName": "RESTful",
+		"css": {
+			"backgroundColor": "#E8B50C",
+			"x": -100,
+			"y": 90,
+			"size": 60,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "bootstrap",
+		"displayName": "Bootstrap",
+		"css": {
+			"backgroundColor": "#7C0CE8",
+			"x": 100,
+			"y": -90,
+			"size": 60,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "nodejs",
+		"displayName": "Node.js",
+		"css": {
+			"backgroundColor": "#0DC8FF",
+			"x": 100,
+			"y": 90,
+			"size": 60,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "ps",
+		"displayName": "Photoshop",
+		"css": {
+			"backgroundColor": "#0BFF60",
+			"x": 180,
+			"y": 40,
+			"size": 50,
+			"fontSize": 9
+		}
+	},
+	{
+		"name": "ae",
+		"displayName": "AfterEffects",
+		"css": {
+			"backgroundColor": "#E8670A",
+			"x": 180,
+			"y": -40,
+			"size": 50,
+			"fontSize": 8
+		}
+	},
+	{
+		"name": "fl",
+		"displayName": "Flash",
+		"css": {
+			"backgroundColor": "#0DC8FF",
+			"x": 250,
+			"y": -80,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "sprites",
+		"displayName": "Sprite",
+		"css": {
+			"backgroundColor": "#FFF602",
+			"x": 250,
+			"y": 0,
+			"size": 50,
+			"fontSize": 12
+		}
+	},
+	{
+		"name": "pr",
+		"displayName": "Premiere",
+		"css": {
+			"backgroundColor": "#FF02FF",
+			"x": 250,
+			"y": 80,
+			"size": 50,
+			"fontSize": 12
+		}
+	}
+]
