@@ -9,6 +9,7 @@
 	margin-top: 50px;
 	/*box-shadow: 0 0 3px rgba(0,0,0,0.5);*/
 	box-shadow: 0 0 10px -4px #000;
+	margin-bottom: 20px;
 }
 
 .title {
