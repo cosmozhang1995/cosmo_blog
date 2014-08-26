@@ -2,11 +2,13 @@
 
 .article-container {
 	/*background-color: #0099FF;*/
+	background-color: #ffffff;
 	padding-left: 20px;
 	padding-right: 20px;
 	padding-top: 30px;
 	margin-top: 50px;
 	/*box-shadow: 0 0 3px rgba(0,0,0,0.5);*/
+	box-shadow: 0 0 10px -4px #000;
 }
 
 .title {
