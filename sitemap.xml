@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<urlset>
+	<url>
+		<loc>http://www.cosmozhang.com/</loc>
+		<lastmod>2014-08-26</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>1.0</priority>
+	</url>
+	<url>
+		<loc>http://www.cosmozhang.com/articles</loc>
+		<lastmod>2014-08-26</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>http://www.cosmozhang.com/galleries</loc>
+		<lastmod>2014-08-26</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>0.7</priority>
+	</url>
+	<url>
+		<loc>http://www.cosmozhang.com/resume</loc>
+		<lastmod>2014-08-26</lastmod>
+		<changefreq>hourly</changefreq>
+		<priority>0.7</priority>
+	</url>
+</urlset>
