@@ -1,5 +1,6 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="baidu-site-verification" content="ZktHpo90lB" />
 	<title>{$page_info['title']|default=首页} - 花栗鼠与美女猫</title>
 	<include file='Public/lib_req/css.php' />
 	<link rel="stylesheet/less" type="text/css" href="__ROOT____CSS__/style.css">
