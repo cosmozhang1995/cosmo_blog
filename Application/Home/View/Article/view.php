@@ -77,6 +77,7 @@
 	<div class="divider divider-horizontal"></div>
 	<div class="share-banner">
 		<script type="text/javascript">
+			var title = "{$article.title}";
 			share_qzone({
 				desc: "我分享了张家治的日志《{$article.title}》",
 				summary: new String("{$article.content}").slice(1, 128),

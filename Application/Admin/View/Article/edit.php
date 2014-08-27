@@ -48,6 +48,10 @@
           </volist>
         </select>
       </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">摘要</label>
+        <textarea class="form-control" name="summary" value="{$gallary.summary}">{$gallary.summary}</textarea>
+      </div>
       <!-- Editor tool bar -->
       <div class="btn-toolbar" data-role="editor-toolbar" data-target="#content-editor">
           <div class="btn-group">
