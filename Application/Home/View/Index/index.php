@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="baidu-site-verification" content="ZktHpo90lB" />
+<include file="Public:common_api_meta" />
 <link rel="icon" href="__IMG_RES__/logo_32.png" type="image/x-icon"/>
 <title>花栗鼠与美女猫</title>
 <include file='Public/lib_req/css.php' />
