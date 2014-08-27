@@ -5,6 +5,7 @@
 	<title>{$page_info['title']|default=首页} - 花栗鼠与美女猫</title>
 	<include file='Public/lib_req/css.php' />
 	<link rel="stylesheet/less" type="text/css" href="__ROOT____CSS__/style.css">
+	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
 	<include file='Public/lib_req/js.php' />
 	<script type="text/javascript">
 		App = {};
