@@ -60,8 +60,14 @@
 	padding-left: 0px;
 	padding-right: 0px;
 }
+
+.share-banner {
+	padding: 10px;
+	text-align: right;
+}
 </style>
 
+<include file="Public:common_qzone_share" />
 <div class="article-container margin-horizontal">
 	<div class="title">{$article.title}</div>
 	<div class="subtitle">
@@ -69,6 +75,15 @@
 		<a class="button"><span class="label label-warning">{$article.tag|translateTag="Article",###}</span></a>
 	</div>
 	<div class="divider divider-horizontal"></div>
+	<div class="share-banner">
+		<script type="text/javascript">
+			share_qzone({
+				desc: "我分享了张家治的日志《{$article.title}》",
+				summary: new String("{$article.content}").slice(1, 128),
+				title: "{$article.title}"
+			});
+		</script>
+	</div>
 	<div class=content>
 		{$article.content}
 	</div>
