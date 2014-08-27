@@ -80,7 +80,7 @@
 			var title = "{$article.title}";
 			share_qzone({
 				desc: "我分享了张家治的日志《{$article.title}》",
-				summary: new String("{$article.content}").slice(1, 128),
+				summary: new String("{$article.summary}").slice(1, 128),
 				title: "{$article.title}"
 			});
 		</script>

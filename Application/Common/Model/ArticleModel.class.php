@@ -5,6 +5,7 @@ class ArticleModel extends AdvModel {
 	protected $_filter = array(
 		'content'=>array(null,'htmlContentReadFilter', false),
 		'id'=>array(null,'intval', false),
+		'summary'=>array(null, 'noLF', false),
 		'create_time'=>array(null,'intval', false),
 	);
 	protected $_validate = array(

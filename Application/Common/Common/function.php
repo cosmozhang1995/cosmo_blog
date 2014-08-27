@@ -79,3 +79,7 @@ function jsonFetchAction($filename) {
 	if ($content) echo $content;
 	else httpError(404, "Content not found");
 }
+
+function noLF($str) {
+	return str_replace(array("/r/n", "/r", "/n"), "", $str);
+}
