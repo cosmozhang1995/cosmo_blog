@@ -83,3 +83,26 @@ function jsonFetchAction($filename) {
 function noLF($str) {
 	return str_replace(array("/r/n", "/r", "/n"), "", $str);
 }
+
+function base_auth($username, $password) {
+	$tok = $username + ':' + $password;
+	$hash = base64_encode($tok);
+	return "Basic ".$hash;
+}
+function base_unauth($auth) {
+	$str = substr($auth, 6);
+	$str = base64_decode($str);
+	$username = explode(':', $str)[0];
+	$password = explode(':', $str)[1];
+  return array("username"=>$username, "password"=>$password);
+}
+
+function isAuth() {
+	if (is_string(I('get.username',null)) && is_string(I('get.password',null))) {
+		return \Common\Modal\UserModal::auth(I('get.username',""), I('get.password',""));
+	} elseif (is_string(I('post.username',null)) && is_string(I('post.password',null))) {
+		return \Common\Modal\UserModal::auth(I('post.username',""), I('post.password',""));
+	} elseif (session('user_id')) {
+		$user = D('User')->find(intval(session('user_id')));
+	}
+}

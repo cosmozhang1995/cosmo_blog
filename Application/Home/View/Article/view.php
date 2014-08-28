@@ -119,10 +119,10 @@ span.xn_share_wrapper {
 			<!-- <a href="javascript:void((function(s,d,e){if(/xiaonei\.com/.test(d.location))return;var%20f='http://share.xiaonei.com/share/buttonshare.do?link=',u=d.location,l=d.title,p=[e(u),'&amp;title=',e(l)].join('');function%20a(){if(!window.open([f,p].join(''),'xnshare',['toolbar=0,status=0,resizable=1,width=626,height=436,left=',(s.width-626)/2,',top=',(s.height-436)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent));"><img src="更换成自己的图片地址/images/renren.gif" alt="分享到校内人人网" border="0" height="16" width="16"></a> -->
 			<script type="text/javascript" src="http://widget.renren.com/js/rrshare.js"></script>
 			<script>
-        var imgUrl = "图片地址";
-        var lineLink = "网址";
-        var descContent = '爱在五月，\n\n妈咪爱1+1亲子健康之旅开启全国行首站----重庆站妈咪爱活性益生菌';
-        var shareTitle = '标题';
+        var imgUrl = "";
+        var lineLink = encodeURIComponent(window.location.href);
+        var descContent = "{$article.summary}";
+        var shareTitle = "{$article.title}";
         var appid = '';
          
         function shareFriend() {
