@@ -31,4 +31,11 @@
 			</a>
 		</li>
 	</div>
+	<div class="top-user-admin">
+		<?php if (isAuth()): ?>
+
+		<?php else: ?>
+			
+		<?php endif; ?>
+	</div>
 </div>
