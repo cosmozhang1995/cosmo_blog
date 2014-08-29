@@ -20,7 +20,8 @@ class UserModel extends AdvModel {
 	);
 
 	static public function auth($username="", $password="") {
-		$user = D('User')->where(array('name'=>$username, 'password'=>$password))->find();
+		if (is_numeric($username)) $user = D('User')->where(array('id'=>$username, 'password'=>md5($password)))->find();
+		else $user = D('User')->where(array('name'=>$username, 'password'=>md5($password)))->find();
 		if ($user) return true;
 		else return false;
 	}

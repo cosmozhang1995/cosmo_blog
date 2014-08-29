@@ -33,6 +33,8 @@
 	</div>
 	<div class="top-user-admin">
 		<?php if (isAuth()): ?>
+			<a href="{:U('/settings')}"><?php $user = getUser(); if ($user) echo $user['alias']; ?></a>&nbsp;
+			<a href="{:U('/logout')}"><i class="fa fa-fw fa-sign-out"></i></a>
 		<?php else: ?>
 			<a href="{:U('/login')}">登录</a>
 		<?php endif; ?>

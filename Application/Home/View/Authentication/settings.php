@@ -21,9 +21,8 @@
 .input-group > * {
 	vertical-align: middle;
 }
-.input-group label {
+.input-group label,span {
 	display: inline-block;
-	font-weight: bold;
 	margin-bottom: 0px;
 	width: 100px;
 	padding: 0 0px;
@@ -31,16 +30,25 @@
 	text-align: right;
 	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif
 }
+.input-group label {
+	font-weight: bold;
+}
+.input-group span {
+	font-weight: normal;
+}
 .input-group label i {
 	font-size: 20px;
 }
-.input-group input {
+.input-group input,span {
 	display: inline-block;
-	width: 270px;
 	height: 28px;
+	width: 270px;
 	line-height: 28px;
 	vertical-align: middle;
 	padding: 0 5px;
+	text-align: left;
+}
+.input-group input {
 	border: 1px #CCC solid;
 	box-shadow: 0 0 15px -9px #000 inset;
 }
@@ -63,6 +71,7 @@
 	font-size: 18px;
 	color: #fff;
 	box-shadow: 0 0 15px -9px #000;
+	text-align: center;
 	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif
 }
 .input-group input.button:hover {
@@ -75,46 +84,72 @@
 			<img src="__IMG_RES__/logo_128.png" style="width:80px; height:80px;" />
 		</div>
 		<div class="input-group">
-			<label style="width:100%; height:auto; font-size:16px; text-align:center;">在花栗鼠与美女猫的世界中创建账号</label>
+			<label style="width:100%; height:auto; font-size:16px; text-align:center;">{$user.alias}的个人资料</label>
 		</div>
 		<div class="input-group" style="height:auto;">
 			<span id="validate-message" style="display:inline-block; width:100%; height:auto; font-size:12px; text-align:center; white-space:normal; color:#f00;">{$msg}</span>
 		</div>
 		<div class="input-group">
 			<label>用户名</label>
-			<input type="text" id="username" value="{$post.username}" placeholder="4-16个字母、数字或下划线，以字母开头" />
+			<span>{$user.name}</span>
+		</div>
+		<div id="change-password-form" style="display:none;">
+			<div class="input-group">
+				<label>当前密码</label>
+				<input type="password" id="oldpassword" placeholder="请输入当前的密码" />
+			</div>
+			<div class="input-group">
+				<label>新密码</label>
+				<input type="password" id="password" placeholder="6-16个字符" />
+			</div>
+			<div class="input-group">
+				<label>确认密码</label>
+				<input type="password" id="password-check" placeholder="再次输入新密码" />
+			</div>
 		</div>
 		<div class="input-group">
-			<label>密码</label>
-			<input type="password" id="password" placeholder="6-16个字符" />
-		</div>
-		<div class="input-group">
-			<label>确认密码</label>
-			<input type="password" id="password-check" placeholder="再次输入密码" />
+			<label id="change-passwd-title">密码</label>
+			<span><a href="javascript:void(0);" id="change-passwd-button" onclick="toggleChangePasswd();">修改密码</a></span>
 		</div>
 		<div class="input-group">
 			<label>昵称</label>
-			<input type="text" id="alias" value="{$post.alias}" placeholder="昵称" />
+			<input type="text" id="alias" value="{$user.alias}" placeholder="昵称" />
 		</div>
 		<div class="input-group">
 			<label>邮箱</label>
-			<input type="email" id="email" value="{$post.email}" placeholder="E-mail 地址" />
+			<input type="email" id="email" value="{$user.email}" placeholder="E-mail 地址" />
 		</div>
-		<input type="hidden" id="real-username" name="username" value="{$post.username}" />
+		<input type="hidden" id="real-oldpassword" name="oldpassword" value="" />
 		<input type="hidden" id="real-password" name="password" value="" />
 		<input type="hidden" id="real-alias" name="alias" value="{$post.alias}" />
 		<input type="hidden" id="real-email" name="email" value="{$post.email}" />
 		<input type="hidden" name="next" value="">
 		<div class="input-group" style="width:100%; height:auto;">
-			<input type="submit" class="button" value="创  建"/>
+			<input type="submit" class="button" value="保  存"/>
 		</div>
 	</form>
 </div>
 <script type="text/javascript">
-var usernameValidate = function(username) {
-	if (typeof username != "string" || username == "") return false;
-	if (username.match(/[a-zA-Z][a-zA-Z\d_]{3,15}/)) return true;
-	return false;
+function toggleChangePasswd() {
+	if ($('#change-password-form').is(':hidden')) {
+		document.getElementById('change-passwd-title').innerHTML = "";
+		document.getElementById('change-passwd-button').innerHTML = "取消修改";
+	} else {
+		document.getElementById('change-passwd-title').innerHTML = "密码";
+		document.getElementById('change-passwd-button').innerHTML = "修改密码";
+	}
+	$('#change-password-form').toggle(200, function() {
+		if ($('#change-password-form').is(':hidden')) {
+			document.getElementById('oldpassword').value = "";
+			document.getElementById('password').value = "";
+			document.getElementById('password-check').value = "";
+		}
+	});
+}
+var oldpasswordValidate = function(password) {
+	if (typeof password != "string" || password == "") return false;
+	if (!$('#change-password-form').is(':hidden')) return false;
+	return true;
 }
 var passwordValidate = function(password) {
 	if (typeof password != "string" || password == "") return false;
@@ -127,24 +162,24 @@ var emailValidate = function(email) {
 	return false;
 }
 var formValidate = function() {
-	var username = document.getElementById('username').value;
+	var oldpassword = document.getElementById('oldpassword').value;
 	var password = document.getElementById('password').value;
 	var passwordChk = document.getElementById('password-check').value;
 	var alias = document.getElementById('alias').value;
 	var email = document.getElementById('email').value;
-	if (!usernameValidate(username)) {
-		document.getElementById('validate-message').innerHTML = "请输入正确的用户名，用户名必须为4-16个字符，只能由字母、数字、下划线组成，且必须以字母开头";
+	if ((!$('#change-password-form').is(':hidden')) && (typeof oldpassword != "string" || oldpassword == "")) {
+		document.getElementById('validate-message').innerHTML = "要修改密码，请提供当前密码";
 		return false;
-	} else if (!passwordValidate(password)) {
+	} else if ((!$('#change-password-form').is(':hidden')) && (!passwordValidate(password))) {
 		document.getElementById('validate-message').innerHTML = "请输入正确的密码，密码必须为6-16个字符，只能由字母、数字、下划线和斜杠组成，且不能以符号开头";
 		return false;
 	} else if (typeof alias != "string" || alias == "") {
 		document.getElementById('validate-message').innerHTML = "请输入正确的昵称";
 		return false;
 	} else if (!emailValidate(email)) {
-		document.getElementById('validate-message').innerHTML = "请输入正确的邮箱";
+		document.getElementById('validate-message').innerHTML = "请输入正确的邮箱"+email;
 		return false;
-	} else if (!(password === passwordChk)) {
+	} else if ((!$('#change-password-form').is(':hidden')) && (!(password === passwordChk))) {
 		document.getElementById('validate-message').innerHTML = "密码不一致，请重新输入";
 		return false;
 	} else {
@@ -154,25 +189,14 @@ var formValidate = function() {
 }
 document.getElementById('login-form').onsubmit = function() {
 	if (!formValidate()) return false;
-	var username = document.getElementById('username').value;
+	var oldpassword = document.getElementById('oldpassword').value;
 	var password = document.getElementById('password').value;
 	var alias = document.getElementById('alias').value;
 	var email = document.getElementById('email').value;
-	document.getElementById('real-username').value = username;
+	document.getElementById('real-oldpassword').value = oldpassword;
 	document.getElementById('real-password').value = password;
 	document.getElementById('real-alias').value = alias;
 	document.getElementById('real-email').value = email;
 	return true;
 }
-// $(document).ready(function() {
-// 	var username = document.getElementById('real-username').value;
-// 	var password = document.getElementById('real-password').value;
-// 	var alias = document.getElementById('real-alias').value;
-// 	var email = document.getElementById('real-email').value;
-// 	document.getElementById('username').value = username;
-// 	document.getElementById('password').value = password;
-// 	document.getElementById('password-check').value = password;
-// 	document.getElementById('alias').value = username;
-// 	document.getElementById('email').value = password;
-// });
 </script>

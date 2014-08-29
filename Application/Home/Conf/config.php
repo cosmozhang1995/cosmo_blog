@@ -22,6 +22,8 @@ return array(
 													=>	'Resume/index',
 		'/^login$/'						=>	'Authentication/index',
 		'/^register$/'				=>	'Authentication/register',
+		'/^settings$/'				=>	'Authentication/settings',
+		'/^logout$/'					=>	'Authentication/logout',
 
 
 		'/^api\/gallery$/'

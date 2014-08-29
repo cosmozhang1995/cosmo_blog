@@ -102,15 +102,27 @@ function base_unauth($auth) {
 }
 
 function isAuth() {
-	if (is_string(I('get.username',null)) && is_string(I('get.password',null))) {
+	if (is_numeric(session('user_id'))) {
+		$user = D('User')->find(intval(session('user_id')));
+		if ($user) return true;
+	} elseif (is_string(I('get.username',null)) && is_string(I('get.password',null))) {
 		return \Common\Model\UserModel::auth(I('get.username',""), I('get.password',""));
 	} elseif (is_string(I('post.username',null)) && is_string(I('post.password',null))) {
 		return \Common\Model\UserModel::auth(I('post.username',""), I('post.password',""));
-	} elseif (is_numeric(session('user_id'))) {
-		$user = D('User')->find(intval(session('user_id')));
-		if ($user) return true;
 	}
 	return false;
+}
+
+function getUser() {
+	$user_id = session('user_id');
+	if (is_numeric($user_id)) {
+		$user = D('User')->find(intval(session('user_id')));
+		if ($user) return $user;
+		else return null;
+	} else {
+		return null;
+	}
+	return null;
 }
 
 function is_email($subject) {

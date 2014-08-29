@@ -14,7 +14,7 @@ class AuthenticationController extends Controller {
 		// } else {
 		// 	$redirect_to = U($redirect_to);
 		// }
-		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', 'Index/index')));
+		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', U('Index/index'))));
 		if (is_string($username)&&is_string($password)&&$username!=""&&$password!="") {
 			if (is_email($username)) $user = D('User')->where(array("email"=>$username))->find();
 			else $user = D('User')->where(array("username"=>$username))->find();
@@ -56,7 +56,7 @@ class AuthenticationController extends Controller {
 		// } else {
 		// 	$redirect_to = U($redirect_to);
 		// }
-		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', 'Index/index')));
+		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', U('Index/index'))));
 		if (I('post.username')&&I('post.username')!="") {
 			$_POST['name'] = $_POST['username'];
 			$User = D('User');
@@ -78,5 +78,50 @@ class AuthenticationController extends Controller {
 		$this->assign('post',$_POST);
 		$this->assign('msg',$msg);
 		$this->display();
+	}
+
+	public function settingsAction() {
+		$msg = "";
+		$User = D('User');
+		$user_id = intval(session('user_id'));
+		$user = $User->find($user_id);
+		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', U('Index/index'))));
+		if (isAuth()) {
+			if (I('post.alias')&&I('post.alias')!="") {
+				$updateData = array("id"=>$user_id, "alias"=>I('post.alias'), "email"=>I('post.email'));
+				if (I('post.password')&&I('post.password')!="") {
+					if (\Common\Model\UserModel::auth($user_id, I('post.oldpassword',""))) {
+						$updateData['password'] = I('post.password');
+					} else {
+						$msg = "修改密码失败，原密码不正确";
+					}
+				}
+				$result = $User->create($updateData);
+				if (!$result) {
+					$msg = $User->getError();
+				} else {
+					$User->save();
+				}
+			}
+		} else {
+			redirect($redirect_to);
+			return;
+		}
+		$user = $User->find($user_id);
+		$this->assign('closeFanNav',true);
+		$this->assign('page_info',array('title'=>$user['alias']));
+		$this->assign('redirect_to',$redirect_to);
+		$this->assign('user',$user);
+		$this->assign('msg',$msg);
+		$this->display();
+	}
+
+	public function logoutAction() {
+		// $redirect_to = I('server.HTTP_REFERER', U('Index/index'));
+		$redirect_to = U('/');
+		if (isAuth()) {
+			session('user_id', null);
+		}
+		redirect($redirect_to);
 	}
 }

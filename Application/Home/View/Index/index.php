@@ -101,12 +101,15 @@
 <script type="text/javascript" src="__ROOT____JS__/index.js"></script>
 <if condition="$inframe eq true">
 <script type="text/javascript" src="__ROOT____JS__/index-inframe.js"></script>
-</if>
+<else/>
 <div class="top-user-admin">
   <?php if (isAuth()): ?>
+    <a href="{:U('/settings')}"><?php $user = getUser(); if ($user) echo $user['alias']; ?></a>&nbsp;
+    <a href="{:U('/logout')}"><i class="fa fa-fw fa-sign-out"></i></a>
   <?php else: ?>
     <a href="{:U('/login')}">登录</a>
   <?php endif; ?>
 </div>
+</if>
 </body>
 </html>
