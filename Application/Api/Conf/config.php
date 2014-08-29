@@ -12,6 +12,8 @@ return array(
 		'/^photo\/(\d+)$/'									=>	'Photo/index?id=:1',
 		'/^photo\/gallery\/(\d+)$/'					=>	'Photo/getByGallery?gallary_id=:1',
 		'/^photo\/upload\/gallery\/(\d+)$/'	=>	'Photo/uploadPhotos?gallary_id=:1',
-		'/^resume\/(\w+)$/'									=>	'Resume/:1'
+		'/^resume\/(\w+)$/'									=>	'Resume/:1',
+		'/^user$/'													=>	'User/index',
+		'/^user\/(\d+)$/'										=>	'User/index?id=:1'
 	)
 );

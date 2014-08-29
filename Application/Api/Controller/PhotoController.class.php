@@ -21,6 +21,10 @@ class PhotoController extends \Api\Controller\ModelBasedController {
 	}
 
 	public function deleteAction() {
+		if (!canDelete()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$Photo = D('Photo');
 		$photoId = intval(I('get.id', '-1'));
 		$thePhoto = $Photo->find($photoId);
@@ -64,6 +68,10 @@ class PhotoController extends \Api\Controller\ModelBasedController {
 	}
 
 	public function uploadPhotosAction() {
+		if (!canPut()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$id = intval(I('get.gallary_id', '-1'));
 		$Gallary = D('Gallary');
 		$gallary = $Gallary->find($id);

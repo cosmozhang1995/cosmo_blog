@@ -51,7 +51,7 @@ class ModelBasedController extends \Api\Controller\CommonController {
 	}
 
 	public function filterFields($entity, $fields, $batch) {
-		$filterSingle = function ($_entity, $_fields) {
+		$filterSingle = function (&$_entity, $_fields) {
 			foreach ($_entity as $key => $value) {
 				if (!in_array($key, $_fields)) {
 					unset($_entity[$key]);
@@ -68,7 +68,24 @@ class ModelBasedController extends \Api\Controller\CommonController {
 		return $entity;
 	}
 
+	public function canGet() {
+		return true;
+	}
+	public function canPost() {
+		return isAdmin();
+	}
+	public function canPut() {
+		return isAdmin();
+	}
+	public function canDelete() {
+		return isAdmin();
+	}
+
 	public function getAction() {
+		if (!$this->canGet()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$Model = $this->getModel();
 		$id = intval(I('get.id', '-1'));
 		if ($id >= 0) {
@@ -95,6 +112,10 @@ class ModelBasedController extends \Api\Controller\CommonController {
 	}
 
 	public function postAction() {
+		if (!$this->canPost()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$inputData = get_object_vars(json_decode($this->getRawData()));
 		$outputData = array();
 		foreach ($this->postFields() as $fieldName) {
@@ -110,6 +131,10 @@ class ModelBasedController extends \Api\Controller\CommonController {
 	}
 
 	public function putAction() {
+		if (!$this->canPut()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$inputData = get_object_vars(json_decode($this->getRawData()));
 		$outputData = array();
 		foreach ($this->putFields() as $fieldName) {
@@ -125,6 +150,10 @@ class ModelBasedController extends \Api\Controller\CommonController {
 	}
 
 	public function deleteAction() {
+		if (!$this->canPost()) {
+			httpError(403, "Not authorized");
+			return;
+		}
 		$id = intval(I('get.id', '-1'));
 		$Model = $this->getModel();
 		$result = $Model->delete($id);

@@ -101,28 +101,53 @@ function base_unauth($auth) {
   return array("username"=>$username, "password"=>$password);
 }
 
-function isAuth() {
-	if (is_numeric(session('user_id'))) {
-		$user = D('User')->find(intval(session('user_id')));
-		if ($user) return true;
+// This must be the basic function of all authentication functions 
+// because it sets the session
+function getUser() {
+	$returnUser = null;
+	$user_id = intval(session('user_id'));
+	if (I('server.PHP_AUTH_USER',null)&&I('server.PHP_AUTH_PW',null)) {
+		$condition = array('name'=>I('server.PHP_AUTH_USER',""),'password'=>md5(I('server.PHP_AUTH_PW',"")));
+		$user = D('User')->where($condition)->find();
+		if ($user) $returnUser = $user;
+		else $returnUser = null;
 	} elseif (is_string(I('get.username',null)) && is_string(I('get.password',null))) {
-		return \Common\Model\UserModel::auth(I('get.username',""), I('get.password',""));
+		$user = D('User')->where(array('name'=>I('get.username',""),'password'=>md5(I('get.password',""))))->find();
+		if ($user) $returnUser = $user;
+		else $returnUser = null;
 	} elseif (is_string(I('post.username',null)) && is_string(I('post.password',null))) {
-		return \Common\Model\UserModel::auth(I('post.username',""), I('post.password',""));
+		$user = D('User')->where(array('name'=>I('post.username',""),'password'=>md5(I('post.password',""))))->find();
+		if ($user) $returnUser = $user;
+		else $returnUser = null;
+	} elseif (is_numeric($user_id)) {
+		$user = D('User')->find(intval(session('user_id')));
+		if ($user) $returnUser = $user;
+		else $returnUser = null;
+	} else {
+		$returnUser = null;
 	}
-	return false;
+	if ($returnUser) session('user_id', intval($returnUser['id']));
+	return $returnUser;
 }
 
-function getUser() {
-	$user_id = session('user_id');
-	if (is_numeric($user_id)) {
-		$user = D('User')->find(intval(session('user_id')));
-		if ($user) return $user;
-		else return null;
+function isAuth() {
+	if (getUser()) return true;
+	else return false;
+}
+
+function isAdmin() {
+	if (APP_DEBUG) {
+		return true;
 	} else {
-		return null;
+		$user = getUser();
+		if ($user) {
+			if ($user['admin']) return true;
+			else return false;
+		} else {
+			return false;
+		}
 	}
-	return null;
+	return false;
 }
 
 function is_email($subject) {
