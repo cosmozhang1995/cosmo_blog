@@ -20,6 +20,8 @@ return array(
 													=>	'Gallary/view?id=:1',
 		'/^resume$/'
 													=>	'Resume/index',
+		'/^login$/'						=>	'Authentication/index',
+		'/^register$/'				=>	'Authentication/register',
 
 
 		'/^api\/gallery$/'

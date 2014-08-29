@@ -102,5 +102,11 @@
 <if condition="$inframe eq true">
 <script type="text/javascript" src="__ROOT____JS__/index-inframe.js"></script>
 </if>
+<div class="top-user-admin">
+  <?php if (isAuth()): ?>
+  <?php else: ?>
+    <a href="{:U('/login')}">登录</a>
+  <?php endif; ?>
+</div>
 </body>
 </html>

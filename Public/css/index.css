@@ -481,3 +481,10 @@ body {
 	-moz-animation:scale-out 0.5s forwards;
 	-webkit-animation:scale-out 0.5s forwards;
 }
+
+.top-user-admin a {
+	color: rgba(0,0,0,0.7);
+}
+.top-user-admin a:hover {
+	color: rgba(0,0,0,1);
+}

@@ -33,9 +33,8 @@
 	</div>
 	<div class="top-user-admin">
 		<?php if (isAuth()): ?>
-
 		<?php else: ?>
-			
+			<a href="{:U('/login')}">登录</a>
 		<?php endif; ?>
 	</div>
 </div>

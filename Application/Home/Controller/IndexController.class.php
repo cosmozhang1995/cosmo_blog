@@ -20,6 +20,8 @@ class IndexController extends Controller {
 	}
 
 	public function fuckAction() {
-		echo "fuck";
+		echo I('get.email');
+		echo "<br/>";
+		echo is_email(I('get.email')) ? "yes" : "no";
 	}
 }

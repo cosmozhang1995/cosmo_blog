@@ -43,4 +43,16 @@ return array(
 	'DEFAULT_UPLOADS_ROOT'	=>	'./Uploads/',
 	'DEFAULT_UPLOADS_URL'		=>	'./Uploads/',
 
+	//邮件配置
+	'THINK_EMAIL' => array(
+	'SMTP_HOST'   => 'smtp.aaa.com', //SMTP服务器
+	'SMTP_PORT'   => '465', //SMTP服务器端口
+	'SMTP_USER'   => 'mail@aaa.com', //SMTP服务器用户名
+	'SMTP_PASS'   => 'password', //SMTP服务器密码
+	'FROM_EMAIL'  => 'mail@aaa.com', //发件人EMAIL
+	'FROM_NAME'   => 'ThinkPHP', //发件人名称
+	'REPLY_EMAIL' => '', //回复EMAIL（留空则为发件人EMAIL）
+	'REPLY_NAME'  => '', //回复名称（留空则为发件人名称）
+),
+
 );
