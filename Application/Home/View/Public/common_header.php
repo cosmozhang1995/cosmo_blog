@@ -19,7 +19,7 @@
 			</a>
 		</li>
 		<li class="top-nav-item">
-			<a class="button" href="#">
+			<a class="button" href="{:U('/newbies/')}">
 				<span class="top-nav-content-chinese">玩意</span>
 				<span class="top-nav-content-english">Newbies</span>
 			</a>

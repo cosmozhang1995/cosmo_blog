@@ -14,6 +14,7 @@ return array(
 		'/^photo\/upload\/gallery\/(\d+)$/'	=>	'Photo/uploadPhotos?gallary_id=:1',
 		'/^resume\/(\w+)$/'									=>	'Resume/:1',
 		'/^user$/'													=>	'User/index',
-		'/^user\/(\d+)$/'										=>	'User/index?id=:1'
+		'/^user\/(\d+)$/'										=>	'User/index?id=:1',
+		'/^newbies\/(\w+)$/'								=>	'Newbies/:1'
 	)
 );

@@ -24,6 +24,7 @@ return array(
 		'/^register$/'				=>	'Authentication/register',
 		'/^settings$/'				=>	'Authentication/settings',
 		'/^logout$/'					=>	'Authentication/logout',
+		'/^newbies$/'					=>	'Newbies/index',
 
 
 		'/^api\/gallery$/'

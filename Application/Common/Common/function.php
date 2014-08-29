@@ -76,8 +76,12 @@ function getAsset($path, $method) {
 
 function jsonFetchAction($filename) {
 	$content = getAsset($filename);
-	if ($content) echo $content;
-	else httpError(404, "Content not found");
+	if ($content) {
+		(new \Behavior\ContentReplaceBehavior())->run($content);
+		echo $content;
+	} else {
+		httpError(404, "Content not found");
+	}
 }
 
 function noLF($str) {

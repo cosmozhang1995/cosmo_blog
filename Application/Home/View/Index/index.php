@@ -49,7 +49,7 @@
 				</a>
 			</div>
 		    <div class="fanleaf-container fanleaf-container4">
-				<a href="javascript:void(0);" target="_top" class="fanleaf" id="fanleaf-game">
+				<a href="{:U('/newbies/')}" target="_top" class="fanleaf" id="fanleaf-game">
     		    	<span class="fa fa-paper-plane"></span>
 				</a>
 			</div>
