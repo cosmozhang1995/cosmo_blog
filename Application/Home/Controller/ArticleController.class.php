@@ -18,7 +18,7 @@ class ArticleController extends Controller {
 		$this->assign('pt',$totolPage);
 		$this->assign('page_info',array('title'=>'文章'));
 		$this->assign('page_flag',array('title'=>'文&nbsp;&nbsp;&nbsp;章', 'subtitle'=>'第&nbsp;'.$page.'&nbsp;页'));
-		$this->display();
+		$this->theme(getTheme())->display();
 	}
 
 	public function viewAction() {
@@ -27,7 +27,7 @@ class ArticleController extends Controller {
 		$a = $Article->find($id);
 		$this->assign('article',$a);
 		$this->assign('page_info',array('title'=>$a['title'].' - 文章'));
-		$this->display();
+		$this->theme(getTheme())->display();
 	}
 
 	public function fuckAction() {

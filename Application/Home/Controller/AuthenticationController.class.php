@@ -17,7 +17,7 @@ class AuthenticationController extends Controller {
 		$redirect_to = I('post.next', I('get.next', I('server.HTTP_REFERER', U('Index/index'))));
 		if (is_string($username)&&is_string($password)&&$username!=""&&$password!="") {
 			if (is_email($username)) $user = D('User')->where(array("email"=>$username))->find();
-			else $user = D('User')->where(array("username"=>$username))->find();
+			else $user = D('User')->where(array("name"=>$username))->find();
 			if ($user) {
 				if ($user['password'] == md5($password)) {
 					echo $user['id'];
@@ -63,7 +63,7 @@ class AuthenticationController extends Controller {
 			$result = $User->create();
 			if ($result) {
 				$User->add();
-				$createdUser = $User->select(array('name'=>I('post.username')))->find();
+				$createdUser = $User->where(array('name'=>I('post.username')))->find();
 				session('user_id', $createdUser['id']);
 				redirect($redirect_to);
 				return;

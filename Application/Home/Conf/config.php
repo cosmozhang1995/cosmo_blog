@@ -2,6 +2,7 @@
 return array(
 	//'配置项'=>'配置值'
 	'URL_ROUTER_ON'		=>	true,
+	'DEFAULT_THEME'		=>	'default',
 	'URL_ROUTE_RULES'	=>	array(
 		'/^$/'								=>	'Index/index',
 		'/^index_inframe$/'		=>	'Index/inframe',
