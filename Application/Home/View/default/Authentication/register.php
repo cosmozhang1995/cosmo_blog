@@ -104,7 +104,7 @@
 		<input type="hidden" id="real-password" name="password" value="" />
 		<input type="hidden" id="real-alias" name="alias" value="{$post.alias}" />
 		<input type="hidden" id="real-email" name="email" value="{$post.email}" />
-		<input type="hidden" name="next" value="">
+		<input type="hidden" name="next" value="{:U('/settings')}">
 		<div class="input-group" style="width:100%; height:auto;">
 			<input type="submit" class="button" value="创  建"/>
 		</div>
