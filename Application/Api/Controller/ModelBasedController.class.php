@@ -93,7 +93,7 @@ class ModelBasedController extends \Api\Controller\CommonController {
 			if ($entity) {
 				echo json_encode($this->filterFields($entity, $this->getFields(), false));
 			} elseif ($photos_cnt == 0) {
-				httpError(404, "Record not found");
+				httpError(302, "Record not found");
 			} else {
 				httpError(500, "Database failed");
 			}

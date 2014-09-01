@@ -4,8 +4,10 @@ use Think\Controller;
 class ArticleController extends Controller {
 
 	public function indexAction() {
+		$default_amount = 5;
+		if (getTheme()=="mobile") $default_amount = 15;
 		$page = intval(I('get.page', '1'));
-		$amount = intval(I('get.pn', '5'));
+		$amount = intval(I('get.pn', $default_amount));
 		$begin = intval(I('get.ps', ($page-1)*$amount));
 		$Article = D('Article');
 		$list = $Article->order('create_time desc')->limit($begin, $amount)->select();

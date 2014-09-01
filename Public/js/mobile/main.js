@@ -30,3 +30,6 @@ $('.menu-item').on('touchend', function() {
 $('.menu-item').on('touchmove', function() {
 	$(this).removeClass('active');
 });
+
+var onBodyScroll = function() {
+}

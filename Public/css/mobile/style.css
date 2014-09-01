@@ -23,6 +23,7 @@ body {
 	vertical-align: middle;
 	background-color: rgba(255,255,255,0.7);
 	box-shadow: 0 0 5px -1px rgba(0,0,0,0.7);
+	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
 }
 .main-container {
 	/*margin-top: 40px;*/
@@ -247,7 +248,74 @@ a.button {
 	/*box-shadow: 0px 8px 10px -10px rgba(0,0,0,1), 0px -8px 10px -10px rgba(255,255,255,1);*/
 	box-shadow: 0 0 3px -1px rgba(0,0,0,1);
 	background-color: rgba(255,255,255,0.7);
+	height: 50px;
+	line-height: 50px;
+	vertical-align: middle;
+	padding-left: 10px;
+	padding-right: 10px;
+	font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
 }
+.menu-item.inline {
+	display: inline-block;
+	/*margin-top: -2px;
+	margin-bottom: -2px;*/
+	margin-left: -2px;
+	margin-right: -2px;
+	width: auto;
+}
+/*.menu-item.inline:first-child {
+	margin-left: -2px;
+}
+.menu-item.inline:last-child {
+	margin-right: -2px;
+}*/
 .menu-item.active,.menu-item:active {
 	background-color: rgba(255,255,255,1);
+}
+.menu-item[disabled].active,.menu-item[disabled]:active {
+	background-color: rgba(255,255,255,0.7);
+}
+a.menu-item {
+	tap-highlight-color: rgba(0,0,0,0);
+	-moz-tap-highlight-color: rgba(0,0,0,0);
+	-o-tap-highlight-color: rgba(0,0,0,0);
+	-ms-tap-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+a.menu-item {
+	color: #000;
+	text-decoration: none;
+}
+a.menu-item:hover {
+	color: #000;
+	text-decoration: none;
+}
+a.menu-item:link {
+	color: #000;
+	text-decoration: none;
+}
+a.menu-item:visited {
+	color: #000;
+	text-decoration: none;
+}
+a.menu-item:active {
+	color: #000;
+	text-decoration: none;
+}
+
+.box {
+	/*background-color: rgba(255,255,255,0.7);*/
+	box-shadow: 0 0 3px -1px rgba(0,0,0,1);
+}
+.box-header,.box-body {
+	display: block;
+	box-shadow: 0 0 3px -1px rgba(0,0,0,1);
+}
+.box-header {
+	background-color: rgba(255,255,255,1);
+	padding: 5px;
+}
+.box-body {
+	background-color: rgba(255,255,255,0.7);
+	padding: 5px;
 }

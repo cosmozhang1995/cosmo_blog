@@ -5,6 +5,8 @@ return array(
 	'URL_ROUTE_RULES'	=>	array(
 		'/^article$/'												=>	'Article/index',
 		'/^article\/(\d+)$/'								=>	'Article/index?id=:1',
+		'/^article\/p\/(\d+)$/'							=> 	'Article/getByPage?pg=:1',
+		'/^article\/p\/(\d+)\/(\d+)$/'			=> 	'Article/getByPage?ps=:1&pg=:2',
 		'/^gallery$/'												=>	'Gallery/index',
 		'/^gallery\/(\d+)$/'								=>	'Gallery/index?id=:1',
 		'/^gallery\/(\d+)\/photos$/'				=>	'Photo/getByGallery?gallary_id=:1',

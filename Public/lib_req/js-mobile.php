@@ -1,4 +1,5 @@
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript" src="__ROOT____JS__/libs/jquery.ba-resize.min.js"></script>
 <!-- <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script> -->
 <script type="text/javascript">
 // less = {
