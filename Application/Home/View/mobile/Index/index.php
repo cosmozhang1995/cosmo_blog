@@ -35,7 +35,7 @@
 <body>
   <a href="{:U('/')}" class="home-page-item" style="background:#fff; color:#000;">
     <div class="item-content">
-      <div class="icon">
+      <div class="icon icon-logo">
         <img src="__IMG_RES__/logo_128.png">
       </div>
       <div class="text text-title">
