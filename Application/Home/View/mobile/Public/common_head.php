@@ -1,12 +1,11 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<include file="Public:common_api_meta" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="icon" href="__IMG_RES__/logo_32.png" type="image/x-icon"/>
 	<title>{$page_info['title']|default=首页} - 花栗鼠与美女猫</title>
-	<include file='Public/lib_req/css.php' />
-	<link rel="stylesheet/less" type="text/css" href="__ROOT____CSS__/style.css">
-	<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js" type="text/javascript" charset="utf-8"></script>
-	<include file='Public/lib_req/js.php' />
+	<include file='Public/lib_req/css-mobile.php' />
+	<link rel="stylesheet" type="text/css" href="__ROOT____CSS__/mobile/style.css">
+	<include file='Public/lib_req/js-mobile.php' />
 	<script type="text/javascript">
 		App = {};
 		<?php if (APP_DEBUG) : ?>

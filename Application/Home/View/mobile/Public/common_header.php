@@ -1,42 +1,50 @@
 <div class="header">
 	<div class="top-nav-bar">
-		<li class="top-nav-item top-nav-item-em">
+		<li class="top-nav-item">
 			<a class="button" href="{:U('/')}">
-				<span class="top-nav-content-chinese">喵</span>
-				<span class="top-nav-content-english">Me</span>
+				<img src="__IMG_RES__/logo_64.png"/>
 			</a>
+		</li>
+		<li class="top-nav-item top-nav-item-devider">
+			<!-- <i class="fa fa-ellipsis-v"></i> -->
+			<div></div>
 		</li>
 		<li class="top-nav-item">
 			<a class="button" href="{:U('/articles/')}">
-				<span class="top-nav-content-chinese">文章</span>
-				<span class="top-nav-content-english">Articles</span>
+				<i class="fa fa-fw fa-book"></i>
 			</a>
 		</li>
 		<li class="top-nav-item">
 			<a class="button" href="{:U('/galleries/')}">
-				<span class="top-nav-content-chinese">相册</span>
-				<span class="top-nav-content-english">Galary</span>
+				<i class="fa fa-fw fa-camera"></i>
 			</a>
 		</li>
 		<li class="top-nav-item">
 			<a class="button" href="{:U('/newbies/')}">
-				<span class="top-nav-content-chinese">玩意</span>
-				<span class="top-nav-content-english">Newbies</span>
+				<i class="fa fa-fw fa-paper-plane"></i>
 			</a>
 		</li>
 		<li class="top-nav-item">
 			<a class="button" href="{:U('/resume/')}">
-				<span class="top-nav-content-chinese">关于</span>
-				<span class="top-nav-content-english">About</span>
+				<i class="fa fa-fw fa-user"></i>
 			</a>
 		</li>
 	</div>
-	<div class="top-user-admin">
+	<li class="top-nav-item top-user-admin">
 		<?php if (isAuth()): ?>
-			<a href="{:U('/settings')}"><?php $user = getUser(); if ($user) echo $user['alias']; ?></a>&nbsp;
-			<a href="{:U('/logout')}"><i class="fa fa-fw fa-sign-out"></i></a>
+			<a class="button top-user-admin-icon" href="javascript(0);">
+				<i class="fa fa-fw fa-settings"></i>
+			</a>
 		<?php else: ?>
-			<a href="{:U('/login')}">登录</a>
+			<a class="button top-user-admin-icon" href="{:U('/login')}">
+				<i class="fa fa-fw fa-sign-in"></i>
+			</a>
 		<?php endif; ?>
-	</div>
+		<div class="menu top-user-menu">
+
+		</div>
+	</li>
+</div>
+<div class="main-title-bar">
+	{$page_info['title']|default=首页}
 </div>

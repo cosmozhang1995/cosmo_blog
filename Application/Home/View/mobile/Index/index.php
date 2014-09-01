@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <link rel="icon" href="__IMG_RES__/logo_32.png" type="image/x-icon"/>
 <title>花栗鼠与美女猫</title>
-<include file='Public/lib_req/css.php' />
-<link rel="stylesheet/less" type="text/css" href="__ROOT____CSS__/mobile/style.css">
+<!-- <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" /> -->
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="__ROOT____CSS__/mobile/index.css">
 <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script type="text/javascript">
@@ -33,7 +33,7 @@
 </head>
 
 <body>
-  <a href="javascript:void(0);" class="home-page-item" style="background:#fff; color:#000;">
+  <a href="{:U('/')}" class="home-page-item" style="background:#fff; color:#000;">
     <div class="item-content">
       <div class="icon">
         <img src="__IMG_RES__/logo_128.png">
@@ -46,7 +46,7 @@
       </div>
     </div>
   </a>
-  <a href="javascript:void(0);" class="home-page-item" style="background:#ffd000">
+  <a href="{:U('/articles')}" class="home-page-item" style="background:#ffd000">
     <div class="item-content">
       <div class="icon">
         <i class="fa-fw fa fa-book"></i>
@@ -97,7 +97,6 @@
     </div>
   </a>
 </body>
-<script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="__ROOT____JS__/libs/jquery.ba-resize.min.js"></script>
 <script type="text/javascript" src="__ROOT____JS__/mobile/index.js"></script>
 </html>

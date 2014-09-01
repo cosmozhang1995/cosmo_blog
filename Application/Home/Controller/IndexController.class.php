@@ -6,13 +6,13 @@ class IndexController extends Controller {
 		$inframe = false;
 		if (I('get.inframe','')!='') $inframe = true;
 		$this->assign('inframe', $inframe);
-		$this->theme(getTheme())->display();
+		$this->display();
 	}
 
 	public function inframeAction() {
 		$inframe = true;
 		$this->assign('inframe', $inframe);
-		$this->theme(getTheme())->display('index');
+		$this->display('index');
 	}
 
 	public function welcomeAction() {
