@@ -32,8 +32,8 @@
 	</div>
 	<li class="top-nav-item top-user-admin">
 		<?php if (isAuth()): ?>
-			<a class="button top-user-admin-icon" href="javascript(0);">
-				<i class="fa fa-fw fa-settings"></i>
+			<a class="button top-user-admin-icon" href="{:U('/settings')}">
+				<i class="fa fa-fw fa-cog"></i>
 			</a>
 		<?php else: ?>
 			<a class="button top-user-admin-icon" href="{:U('/login')}">
