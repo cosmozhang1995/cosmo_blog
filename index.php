@@ -21,7 +21,7 @@ define('APP_DEBUG',true);
 define('APP_PATH','./Application/');
 
 // 定义是否admin
-if ($_COOKIE['auth'] == 'loveyan' || APP_DEBUG) define('APP_ADMIN', true);
+if ((isset($_COOKIE['auth']) && $_COOKIE['auth'] == 'loveyan') || APP_DEBUG) define('APP_ADMIN', true);
 else define('APP_ADMIN', false);
 
 // 引入ThinkPHP入口文件

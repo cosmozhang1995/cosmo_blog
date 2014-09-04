@@ -33,3 +33,18 @@ $('.menu-item').on('touchmove', function() {
 
 var onBodyScroll = function() {
 }
+
+function stopBubble(e){  
+	if(e&&e.stopPropagation){
+		e.stopPropagation();
+	}else{
+		window.event.cancelBubble = true;
+	}
+}
+
+Element.prototype.removeAllChildNodes = function() {
+	var childs = this.childNodes;
+	for (var i = childs.length - 1; i >= 0; i--) {
+		this.removeChild(childs[i]);
+	}
+}

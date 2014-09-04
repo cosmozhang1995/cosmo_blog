@@ -1,10 +1,4 @@
 <style type="text/css">
-.main-container {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
 .title {
 	font-size: 18px;
 	font-family: "ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;

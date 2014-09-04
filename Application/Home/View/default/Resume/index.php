@@ -251,6 +251,9 @@
 .resume-row-time-line .item .column {
 	padding: 10px;
 }
+.resume-row-time-line .item .column-middle {
+	text-align: center;
+}
 .resume-row-time-line .item .column-left {
 	text-align: right;
 }
@@ -332,6 +335,7 @@
 	background-color: #FFFFFC;
 	margin-top: 10px;
 	margin-left: -10px;
+	margin-right: -10px;
 	border-radius: 50%;
 	width: 20px;
 	height: 20px;
@@ -512,8 +516,9 @@ function personalCourse(course) {
 		// if (!checkIn) appendHeight -= 100;		// Always has a error 100, I don't know why, waiting to solve
 		var pos = title.getPosition();
 		pos.bottom += appendHeight;
-		var clientX = e.clientX + document.body.scrollLeft;
-		var clientY = e.clientY + document.body.scrollTop;
+		var clientX = e.clientX + (document.body.scrollLeft||document.documentElement.scrollLeft);
+		var clientY = e.clientY + (document.body.scrollTop||document.documentElement.scrollTop);
+		console.log(e.clientX, e.clientY);
 		console.log({x:clientX,y:clientY}, pos);
 		if (clientX <= pos.right && clientX >= pos.left && clientY <= pos.bottom && clientY >= pos.top) 
 			return true;
@@ -523,16 +528,17 @@ function personalCourse(course) {
 	function mouseOver(e) {
 		console.log('in');
 		if (checkDescHover(e,this, true)) {
+			console.log('checkover');
 			var theItem = $(this).parents('.item')[0];
 			var theBackColor = $('body').css('background-color');
 			$(theItem).find('.column-middle .circle').css('background-color', this.style.backgroundColor);
 			$(theItem).find('.column-middle .circle').css('border-color', theBackColor);
 			$(this).find('.desc').show(200, function() {
-				var windowBottom = document.documentElement.clientHeight + document.body.scrollTop||document.documentElement.scrollTop;
+				var windowBottom = document.documentElement.clientHeight + (document.body.scrollTop||document.documentElement.scrollTop);
 				var bottomMargin = windowBottom - ($(this).parents('.item')[0].getPosition().bottom) ;
 				if (bottomMargin < 0) {
 					var offset = -bottomMargin;
-					var currScrollTop = document.body.scrollTop||document.documentElement.scrollTop;
+					var currScrollTop = (document.body.scrollTop||document.documentElement.scrollTop);
 					var toScrollTop = currScrollTop + offset + 'px';
 					$(document.body).animate({'scrollTop': toScrollTop}, 200);
 				}
@@ -587,9 +593,13 @@ function personalCourse(course) {
 		infoTag.innerHTML = courseItem.tag;
 		infoTime.innerHTML = courseItem.startYear;
 
-		quotDesc.style.display = 'none';
-		quotBody.onmouseover = mouseOver;
-		quotBody.onmouseout = mouseOut;
+		var isOpera = navigator.userAgent.indexOf("Opera") > -1;
+		if (!isOpera) {
+			// Opera performs badly in hover animation
+			quotDesc.style.display = 'none';
+			quotBody.onmouseover = mouseOver;
+			quotBody.onmouseout = mouseOut;
+		}
 
 		var config = course.configs[courseType];
 		infoTag.style.color = config.tagColor;

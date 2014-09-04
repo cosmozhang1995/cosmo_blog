@@ -282,7 +282,7 @@ body {
 		padding-left: @side_padding;
 		padding-right: @side_padding;
 	}
-	.margin-horizontal {
+	.margin-horizontal,.main-footer {
 		margin-left: @side_padding;
 		margin-right: @side_padding;
 	}
@@ -296,7 +296,7 @@ body {
 		padding-left: @side_padding_narrow;
 		padding-right: @side_padding_narrow;
 	}
-	.margin-horizontal {
+	.margin-horizontal,.main-footer {
 		margin-left: @side_padding_narrow;
 		margin-right: @side_padding_narrow;
 	}
@@ -458,3 +458,34 @@ body {
 .goto-top:hover > .fa {
 	color: rgba(255,255,255,1);
 }
+
+.main-footer-container {
+	background-color: #eeeeee;
+	font-family:"ff-tisa-web-pro-1","ff-tisa-web-pro-2","Lucida Grande","Helvetica Neue",Helvetica,Arial,"Hiragino Sans GB","Hiragino Sans GB W3","WenQuanYi Micro Hei",sans-serif;
+	box-shadow: 0px 10px 10px -10px #000 inset;
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+.main-footer {
+	display: block;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.main-footer span {
+	display: inline-block;
+	/*height: 20px;*/
+	line-height: 14px;
+	vertical-align: middle;
+	text-align: center;
+	white-space: normal;
+	margin: -1px 15px;
+	font-size: 10px;
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+/*.main-footer span.leaf {
+	white-space: nowrap;
+	text-align: left;
+}*/

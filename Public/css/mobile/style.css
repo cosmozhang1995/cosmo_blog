@@ -28,6 +28,12 @@ body {
 .main-container {
 	/*margin-top: 40px;*/
 }
+.main-container {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
 
 /* Common header navigation */
 .top-nav-bar {
@@ -211,7 +217,6 @@ a.button {
 }
 .loading-indicator-1 {
 	border-color: #3399FF transparent #FF0000 transparent;
-
 	animation: loading-indicator-anim infinite linear 2s;
 	-webkit-animation: loading-indicator-anim infinite linear 2s;
 	-moz-animation: loading-indicator-anim infinite linear 2s;
@@ -220,7 +225,6 @@ a.button {
 }
 .loading-indicator-2 {
 	border-color: #FF9900 transparent #33CC66 transparent;
-
 	animation: loading-indicator-anim infinite linear 1s;
 	-webkit-animation: loading-indicator-anim infinite linear 1s;
 	-moz-animation: loading-indicator-anim infinite linear 1s;

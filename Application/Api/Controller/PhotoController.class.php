@@ -6,6 +6,21 @@ class PhotoController extends \Api\Controller\ModelBasedController {
 
 	var $modelName = "Photo";
 
+	function getThumbnailAction() {
+		$id = intval(I('get.id', '-1'));
+		$width = intval(I('get.width', '100'));
+		$height = intval(I('get.height', '100'));
+		$Photo = D('Photo');
+		$photo = $Photo->find($id);
+		if ($photo) {
+			header('Content-type: image/jpg');
+			$result = img2thumb($photo['url'], '', $width, $height, 1, 0);
+			if (!$result) httpError(404, 'Resource not found');
+		} else {
+			httpError(404, 'Resource not found');
+		}
+	}
+
 	public function getByGalleryAction() {
 		$gallary_id = intval(I('get.gallary_id', '-1'));
 		$Photo = D('Photo');

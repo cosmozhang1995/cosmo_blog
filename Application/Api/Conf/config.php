@@ -14,6 +14,9 @@ return array(
 		'/^photo\/(\d+)$/'									=>	'Photo/index?id=:1',
 		'/^photo\/gallery\/(\d+)$/'					=>	'Photo/getByGallery?gallary_id=:1',
 		'/^photo\/upload\/gallery\/(\d+)$/'	=>	'Photo/uploadPhotos?gallary_id=:1',
+		'/^photo\/thumbnail\/(\d+)$/'	=>	'Photo/getThumbnail?id=:1',
+		'/^photo\/thumbnail(\d+)x(\d+)\/(\d+)$/'
+																				=>	'Photo/getThumbnail?id=:3&width=:1&height=:2',
 		'/^resume\/(\w+)$/'									=>	'Resume/:1',
 		'/^user$/'													=>	'User/index',
 		'/^user\/(\d+)$/'										=>	'User/index?id=:1',

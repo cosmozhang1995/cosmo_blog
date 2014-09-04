@@ -1,10 +1,4 @@
 <style type="text/css">
-.main-container {
-	padding-top: 10px;
-	padding-bottom: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-}
 .article-list {
 }
 .article-list-item {

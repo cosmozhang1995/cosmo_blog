@@ -7,8 +7,8 @@
 		<div class="main-container">
 			{__CONTENT__}
 		</div>
+		<include file="Public:common_footer" />
 	</body>
 	<include file="Public:common_goto_top" />
-	<include file="Public:common_footer" />
 	<include file="Public:common_foot" />
 </html>

@@ -29,8 +29,11 @@ class GallaryController extends Controller {
 				$gallariesInTags[$theTag] = array('tag'=>$theTag, 'gallaries'=>array());
 			}
 			$cover = $Photo->find($value['cover_photo_id']);
+			$cnt = $Photo->where(array('gallary_id'=>$value['id']))->count();
 			if ($cover) $value['cover_url'] = $cover['url'];
 			else $value['cover_url'] = '/blackhole.png';
+			if (is_numeric($cnt)) $value['photo_count'] = intval($cnt);
+			else $value['photo_count'] = 0;
 			array_push($gallariesInTags[$theTag]['gallaries'], $value);
 		}
 

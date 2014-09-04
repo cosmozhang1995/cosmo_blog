@@ -1,0 +1,57 @@
+.pager-container {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	background-color: rgba(0,0,0,0.6);
+}
+.pager {
+	display: block;
+	box-shadow: 0 0 5px 0 #000;
+	overflow: hidden;
+}
+.pager-page-container {
+	display: inline-block;
+	font-size: 0px;
+	text-size-adjust:none;
+	-webkit-text-size-adjust:none;
+	width: auto;
+	height: auto;
+	white-space: nowrap;
+	vertical-align: top;
+}
+.pager-page {
+	display: inline-block;
+	background-color: #000;
+	overflow: hidden;
+	vertical-align: top;
+	position: relative;
+}
+.pager-page img {
+	width: auto;
+	height: auto;
+}
+.pager-close-button {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	display: inline-block;
+	height: auto;
+	width: auto;
+	padding: 3px;
+	color: rgba(255,255,255,0.7);
+}
+.pager-loading-indicator {
+	width: 100%;
+	height: 100%;
+	line-height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	text-align: center;
+	vertical-align: middle;
+}
+.pager-loading-indicator-content {
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+}
