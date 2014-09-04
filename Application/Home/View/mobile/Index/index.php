@@ -56,7 +56,7 @@
       </div>
     </div>
   </a>
-  <a href="javascript:void(0);" class="home-page-item" style="background:#e83f0c">
+  <a href="{:U('/galleries')}" class="home-page-item" style="background:#e83f0c">
     <div class="item-content">
       <div class="icon">
         <i class="fa-fw fa fa-camera"></i>
@@ -66,7 +66,7 @@
       </div>
     </div>
   </a>
-  <a href="javascript:void(0);" class="home-page-item" style="background:#0c88e8">
+  <a href="{:U('/newbies')}" class="home-page-item" style="background:#0c88e8">
     <div class="item-content">
       <div class="icon">
         <i class="fa-fw fa fa-paper-plane"></i>
@@ -76,7 +76,7 @@
       </div>
     </div>
   </a>
-  <a href="javascript:void(0);" class="home-page-item" style="background:#0be529"><!-- original color: #0dff2d -->
+  <a href="{:U('/resume')}" class="home-page-item" style="background:#0be529"><!-- original color: #0dff2d -->
     <div class="item-content">
       <div class="icon">
         <i class="fa-fw fa fa-user"></i>
