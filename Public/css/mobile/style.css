@@ -45,6 +45,7 @@ body {
 	background-color: rgba(255,255,255,0.7);
 	/*border-bottom: 1px rgba(0,0,0,0.4) solid;*/
 	box-shadow: 0 0 5px -1px rgba(0,0,0,0.7);
+	z-index: 800;
 }
 .top-nav-item {
 	display: inline-block;
@@ -148,6 +149,7 @@ a.button {
 	line-height: 40px;
 	vertical-align: middle;
 	padding: 0 5px;
+	z-index: 800;
 }
 .top-user-admin.active {
 	box-shadow: 8px 0 10px -10px rgba(0,0,0,0.5) inset;
