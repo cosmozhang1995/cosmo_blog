@@ -142,6 +142,8 @@ function isAuth() {
 function isAdmin() {
 	if (APP_DEBUG) {
 		return true;
+	} if (APP_ADMIN) {
+		return true;
 	} else {
 		$user = getUser();
 		if ($user) {

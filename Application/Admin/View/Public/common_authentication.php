@@ -1,6 +1,6 @@
 <?php
 
-if (!APP_ADMIN) {
+if (!isAdmin()) {
 	httpError(403, "Not authenticated");
 	die();
 }

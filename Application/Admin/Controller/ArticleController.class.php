@@ -7,10 +7,10 @@ class ArticleController extends Controller {
 	}
 
 	public function listAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
+		// if (!APP_ADMIN) {
+		// 	httpError(403, 'Not authorized');
+		// 	return;
+		// }
 		$page = intval(I('get.page', '1'));
 		$amount = intval(I('get.pn', '10'));
 		$begin = intval(I('get.ps', ($page-1)*$amount));
@@ -38,10 +38,10 @@ class ArticleController extends Controller {
 	}
 
 	public function editAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
+		// if (!APP_ADMIN) {
+		// 	httpError(403, 'Not authorized');
+		// 	return;
+		// }
 		$id = intval(I('get.id', '-1'));
 		$isnew = !($id >= 0);
 		$result = null;
@@ -58,10 +58,10 @@ class ArticleController extends Controller {
 	}
 
 	public function updateAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
+		// if (!APP_ADMIN) {
+		// 	httpError(403, 'Not authorized');
+		// 	return;
+		// }
 		$Article = D('Article');
 		$result = $Article->create();
 		if ($result) $Article->save();
@@ -76,10 +76,10 @@ class ArticleController extends Controller {
 	}
 
 	public function createAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
+		// if (!APP_ADMIN) {
+		// 	httpError(403, 'Not authorized');
+		// 	return;
+		// }
 		$Article = D('Article');
 		$result = $Article->create();
 		if ($result) $Article->add();
@@ -94,10 +94,10 @@ class ArticleController extends Controller {
 	}
 
 	public function deleteAction() {
-		if (!APP_ADMIN) {
-			httpError(403, 'Not authorized');
-			return;
-		}
+		// if (!APP_ADMIN) {
+		// 	httpError(403, 'Not authorized');
+		// 	return;
+		// }
 		$id = intval(I('get.id', '-1'));
 		$Article = D('Article');
 		$result = $Article->delete($id);

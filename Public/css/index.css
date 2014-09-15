@@ -27,6 +27,7 @@
 
 body {
 	overflow:hidden;
+	background-color: @bg_color;
 }
 
 .fan-container-container {

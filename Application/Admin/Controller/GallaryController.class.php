@@ -193,7 +193,7 @@ class GallaryController extends Controller {
 	}
 
 	public function deletePhotoHandlerAction() {
-		if (!APP_ADMIN) {
+		if (!isAdmin()) {
 			httpError(403, 'Not authorized');
 			return;
 		}
