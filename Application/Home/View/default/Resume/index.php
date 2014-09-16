@@ -156,6 +156,7 @@
 .resume-row-time-line {
 	position: relative;
 	margin-top: 20px;
+	z-index: 0;
 }
 .resume-row-time-line .time-line {
 	position: absolute;
@@ -530,7 +531,7 @@ function personalCourse(course) {
 		if (checkDescHover(e,this, true)) {
 			console.log('checkover');
 			var theItem = $(this).parents('.item')[0];
-			var theBackColor = $('body').css('background-color');
+			var theBackColor = $('.main-container').css('background-color');
 			$(theItem).find('.column-middle .circle').css('background-color', this.style.backgroundColor);
 			$(theItem).find('.column-middle .circle').css('border-color', theBackColor);
 			$(this).find('.desc').show(200, function() {
@@ -550,7 +551,7 @@ function personalCourse(course) {
 		console.log('out');
 		if (!checkDescHover(e,this,false)) {
 			var theItem = $(this).parents('.item')[0];
-			var theBackColor = $('body').css('background-color');
+			var theBackColor = $('.main-container').css('background-color');
 			// $(theItem).find('.column-middle .circle').css('border-color', this.style.backgroundColor);
 			$(theItem).find('.column-middle .circle').css('border-color', 'rgb(225,225,225)');
 			$(theItem).find('.column-middle .circle').css('background-color', theBackColor);
