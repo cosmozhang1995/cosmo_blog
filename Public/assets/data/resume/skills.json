@@ -182,9 +182,9 @@
 		"rate": 9
 	},
 	{
-		"name": "restful",
-		"displayName": "RESTful",
-		"shortName": "RESTful",
+		"name": "coffeescript",
+		"displayName": "CoffeeScript",
+		"shortName": "Coffee",
 		"css": {
 			"backgroundColor": "#E8B50C",
 			"x": -100,
