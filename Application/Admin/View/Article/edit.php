@@ -8,8 +8,7 @@
 <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
 <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
 <script src="__PUBLIC__/libs/jquery.hotkeys.js"></script>
-<script src="http://libs.baidu.com/backbone/0.9.2/backbone-min.js"></script>
-<script src="__PUBLIC__/libs/prettify.js"></script>
+<script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 <script src="http://www.bootcss.com/p/bootstrap-wysiwyg/bootstrap-wysiwyg.js"></script>
 <style type="text/css">
 #content-editor {
