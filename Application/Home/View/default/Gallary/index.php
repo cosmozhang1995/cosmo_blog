@@ -7,6 +7,9 @@
 .page-flag {
 	border-color: transparent #FF3366;
 }
+.page-flag-text > p {
+	text-shadow: 1px 1px 2px #FF3366, 0 0 0 #000;
+}
 
 .catagory-list-container {
 	padding-left: 100px;

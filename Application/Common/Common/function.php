@@ -28,7 +28,13 @@ function getTags($model) {
 }
 
 function translateDate($timestamp) {
-	return date('Y/m/d H:i', $timestamp);
+	return date('Y年m月d日', $timestamp);
+}
+function translateDateTime($timestamp) {
+	return date('Y年m月d日 H:i', $timestamp);
+}
+function translateTime($timestamp) {
+	return date('H:i', $timestamp);
 }
 
 function httpError($code, $msg) {

@@ -45,11 +45,13 @@
               <option value="{$item.name}">{$item.tag}</option>
             </if>
           </volist>
+          
         </select>
+        &nbsp;&nbsp;<a href="javascript:addTag();" id="link-add-tag" value="">添加...</a>
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">摘要</label>
-        <textarea class="form-control" name="summary" value="{$gallary.summary}">{$gallary.summary}</textarea>
+        <textarea class="form-control" name="summary" value="{$article.summary}">{$article.summary}</textarea>
       </div>
       <!-- Editor tool bar -->
       <div class="btn-toolbar" data-role="editor-toolbar" data-target="#content-editor">
@@ -114,10 +116,73 @@
   </div>
 </div>
 </div>
+
+<div class="modal fade" id="modal-add-tag" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">添加标签</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="add-tag-name" class="col-sm-2 control-label">机器名称</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="add-tag-name" placeholder="机器名称">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="add-tag-tag" class="col-sm-2 control-label">标签</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="add-tag-tag" placeholder="标签">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary" id="add-tag-submit">添加</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 <script type="text/javascript">
 $(document).ready(function(e) {
     $('#content-editor').wysiwyg();
+
+    // if ($('#tag option').length == 0) newTagOption.click();
+    $('#add-tag-submit').click(function(event) {
+      var name = $('#add-tag-name').val(),
+          tag = $('#add-tag-tag').val(),
+          data = {
+            name: name,
+            tag: tag
+          };
+      $.ajax({
+        url: '{:U("/Api/ArticleTag")}',
+        type: 'POST',
+        data: data,
+      })
+      .done(function() {
+        $('#modal-add-tag').modal('hide');
+        $('#tag option').attr('selected', false);
+        $('<option selected="selected" value="' + name + '">' + tag + '</option>').appendTo('#tag');
+      })
+      .fail(function() {
+        alert('添加失败');
+      })
+      .always(function() {
+      });
+      
+    });
 });
+
+function addTag() {
+  $('#add-tag-name, #add-tag-tag').val('');
+  $('#modal-add-tag').modal('show');
+}
 </script>
 </html>

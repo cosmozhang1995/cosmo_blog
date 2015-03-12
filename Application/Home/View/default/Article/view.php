@@ -56,6 +56,10 @@
 	color: #000;
 }
 
+.content img {
+	max-width: 100%;
+}
+
 .main-container {
 	padding-left: 0px;
 	padding-right: 0px;
