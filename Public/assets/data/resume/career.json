@@ -25,5 +25,14 @@
 		"tag": "Front End",
 		"title": "成都彩程软件设计公司",
 		"desc": "<i class=\"fa fa-user\"></i>&nbsp;前端工程师<br/><br/>在职期间独立完成公司主要产品Tower的页面优化<br/>重构公司发布的几个开源前端组件"
+	},
+	{
+		"startYear": 2015,
+		"startMonth": 1,
+		"endYear": 2015,
+		"endMonth": 3,
+		"tag": "Front End",
+		"title": "百度",
+		"desc": "<i class=\"fa fa-user\"></i>&nbsp;前端工程师<br/><br/>在职期间完成百度母婴APP“宝宝知道”的wap站和PC站前端<br/>独立完成部门内部接口管理平台前端"
 	}
 ]

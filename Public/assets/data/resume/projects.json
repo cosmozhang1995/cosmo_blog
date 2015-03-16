@@ -70,5 +70,14 @@
 		"tag": "Web Application",
 		"title": "Tower – 一个在线团队管理平台",
 		"desc": "<i class=\"fa fa-user\"></i>&nbsp;前端工程师<br/><br/>基于RubyonRails框架的Web应用<br/>采用stackpage方式加载页面<br/>使用jquery-ujs处理表单<br/>发布了一系列开源前端项目"
+	},
+	{
+		"startYear": 2015,
+		"startMonth": 1,
+		"endYear": 2015,
+		"endMonth": 3,
+		"tag": "Web Application",
+		"title": "宝宝知道 - 百度母婴APP",
+		"desc": "<i class=\"fa fa-user\"></i>&nbsp;前端工程师<br/><br/>使用fisp框架开发前端<br/>协调后端PHP基础工作"
 	}
 ]
